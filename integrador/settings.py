@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "core",
     "supermercado",
     "produto",
+    "categoria",
 ]
 
 MIDDLEWARE = [
