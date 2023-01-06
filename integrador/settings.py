@@ -137,3 +137,6 @@ PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(1, os.path.join(PROJECT_ROOT, "../apps"))
 
 AUTH_USER_MODEL = "usuario.Usuario"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
