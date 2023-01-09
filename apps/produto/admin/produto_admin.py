@@ -21,3 +21,6 @@ class ProdutoAdmin(admin.ModelAdmin):
         "criado",
         "modificado",
     ]
+    filter_horizontal = [
+        "categorias",
+    ]

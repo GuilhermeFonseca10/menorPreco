@@ -1,5 +1,7 @@
 from django.db import models
 
+from .categoria import Categoria
+
 
 class Produto(models.Model):
 
@@ -14,6 +16,10 @@ class Produto(models.Model):
     descricao = models.TextField(verbose_name="Descrição", blank=True)
     criado = models.DateTimeField(verbose_name="Criado em", auto_now_add=True)
     modificado = models.DateTimeField("Modificado em", auto_now=True)
+
+    categorias = models.ManyToManyField(
+        "Categoria", verbose_name="Categorias", blank=True
+    )
 
     class Meta:
         verbose_name = "Produto"
