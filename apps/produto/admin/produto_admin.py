@@ -16,3 +16,8 @@ class ProdutoAdmin(admin.ModelAdmin):
     search_fields = [
         "nome",
     ]
+
+    list_filter = [
+        "criado",
+        "modificado",
+    ]
