@@ -1,1 +1,67 @@
-<h1>teste</h1>
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'core/core.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+
+
+    <section class="hero">
+        <div class="site-description">
+            <h2>Aqui voçê encontra o menor preço!</h2>
+            <p>Promoções e menores preços, tudo reunido em um só lugar</p>
+            <br>
+            <a href="#" type="button" class="btn btn-primary">Encontrar Melhor Preço!</a>
+        </div>
+    </section>
+    <br>
+    
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../static/core/img/queiroz.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Atacarejo</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../static/core/img/queiroz.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Super Q</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../static/core/img/queiroz.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Nonato Atacarejo</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../static/core/img/queiroz.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Queiroz Supermercado</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+{% endblock%}

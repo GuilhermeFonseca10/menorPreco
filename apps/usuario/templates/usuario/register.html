@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'usuario/usuario.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+
+<section class="hero3">
+    <div class="site-description-register">
+      <h2>Register with SuperMarkIt</h2>
+      <br>
+      <form class="site-form-register" action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper-register">
+          {{ field.errors }}
+          <span class="field-tags">{{ field.label_tag }}</span> {{ field }}
+          {% if field.help_text %}
+          <p class="help">{{ field.help_text|safe }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <button class="btn-register-auth" type="submit"><span>Register</span></button>
+      </form>
+      <p class="footer">Created by Ramon Williams</p>
+    </div>
+  </section>
+
+
+{% endblock%}
