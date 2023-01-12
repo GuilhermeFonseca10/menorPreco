@@ -1,27 +1,16 @@
-body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: #C6C6C6 !important;
-}
-
-/* .bg-nav{
-    background-color: #ffffff !important;
-} */
-
-.bg-nav li a{
-    color: #2A7FFD !important;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-.bg-nav li a:hover{
-    color: rgb(114, 114, 150) !important;
-}
-
-.logo img {
-    width: 60px !important;
-    height: 50px;
-
-}
+a {
+    font-size:14px;
+    font-weight:700
+  }
+  .superNav {
+    font-size:12px;
+  }
+  .form-control {
+    outline:none !important;
+    box-shadow: none !important;
+  }
+  @media screen and (max-width:540px){
+    .centerOnMobile {
+      text-align:center
+    }
+  }
