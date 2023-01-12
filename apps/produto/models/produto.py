@@ -1,7 +1,5 @@
 from django.db import models
 
-from .categoria import Categoria
-
 
 class Produto(models.Model):
 
