@@ -17,17 +17,19 @@
               <div class="text-center">
                   <h3 class="text-primary">Sign In</h3>
               </div>
-              <form action="">
+              <form method="POST">
+                {%csrf_token%}
                   <div class="p-4">
                       <div class="input-group mb-3">
                           <span class="input-group-text bg-primary"><i
                                   class="bi bi-person-plus-fill text-white"></i></span>
-                          <input type="text" class="form-control" placeholder="Username">
+                          {{form.username}}
+                          
                       </div>
                       <div class="input-group mb-3">
                           <span class="input-group-text bg-primary"><i
                                   class="bi bi-key-fill text-white"></i></span>
-                          <input type="password" class="form-control" placeholder="password">
+                          {{form.password}}
                       </div>
                       <button class="btn btn-primary text-center mt-2" type="submit">
                           Login
