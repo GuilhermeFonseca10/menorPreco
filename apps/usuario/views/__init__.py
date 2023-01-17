@@ -1,1 +1,3 @@
-__all__ = []
+from .register_view import RegisterView
+
+__all__ = ["RegisterView"]

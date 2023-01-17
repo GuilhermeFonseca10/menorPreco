@@ -23,10 +23,15 @@
               0000-0000</strong></span>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-lg-block d-md-block-d-sm-block d-xs-none text-end">
+          {%if user.is_authenticated%}
           <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
-            href="{% url 'usuario:login' %}">Logar</a></span>
-          <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
-              href="#">Cadastre-se</a></span>
+            href="{%url 'logout' %}">Sair</a></span>
+            {%else%}
+            <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
+              href="{% url 'login' %}">Entrar</a></span>
+            {%endif%}
+            <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
+              href="{% url 'usuario:register' %}">Cadastre-se</a></span>
         </div>
       </div>
     </div>
@@ -100,10 +105,10 @@
             <form class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'usuario:login' %}">Login</a>
+                    
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'usuario:register' %}">Cadastrar</a>
+                       
                       </li>
                   </ul>
             </form>
