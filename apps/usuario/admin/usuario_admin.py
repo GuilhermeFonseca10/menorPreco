@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from ..models.usuario import Usuario
+
 from ..forms.usuario_admin_form import UsuarioAdminForm
 from ..forms.usuario_form import UserCreationForm
+from ..models.usuario import Usuario
 
 
 class UsuarioAdmin(BaseUserAdmin):
-    add_form = UserCreationForm, UsuarioAdminForm
+    add_form = UserCreationForm
     add_fieldsets = (
         (
             None,
@@ -21,21 +22,24 @@ class UsuarioAdmin(BaseUserAdmin):
         ),
     )
     fieldsets = (
-        (None, {"fields": ("username", "email")}),
+        (
+            None,
+            {"fields": ["username", "email"]},
+        ),
         (
             "Informações Básicas",
-            {"fields": ("nome", "last_login")},
+            {"fields": ["nome", "last_login"]},
         ),
         (
             "Permissões",
             {
-                "fields": (
+                "fields": [
                     "is_active",
                     "is_staff",
                     "is_superuser",
                     "groups",
                     "user_permissions",
-                )
+                ]
             },
         ),
     )
