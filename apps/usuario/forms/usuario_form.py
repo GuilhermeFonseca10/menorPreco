@@ -7,3 +7,8 @@ class UsuarioCreationForm(UserCreationForm):
     class Meta:
         model = Usuario
         fields = ["username", "email"]
+        
+        
+        
+      
+        
