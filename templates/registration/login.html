@@ -1,5 +1,8 @@
 {% extends "base.html" %}
+
 {% load bootstrap5 %}
+
+{% load widget_tweaks %}
 
 {% load static %}
 
@@ -15,7 +18,7 @@
       <div class="rounded d-flex justify-content-center">
           <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
               <div class="text-center">
-                  <h3 class="text-primary">Sign In</h3>
+                  <h3 class="text-primary">Logar na Plataforma</h3>
               </div>
               <form method="POST">
                 {%csrf_token%}
@@ -23,7 +26,7 @@
                       <div class="input-group mb-3">
                           <span class="input-group-text bg-primary"><i
                                   class="bi bi-person-plus-fill text-white"></i></span>
-                          {{form.username}}
+                          {{ form.username }}
                           
                       </div>
                       <div class="input-group mb-3">

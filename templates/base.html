@@ -27,6 +27,11 @@
           <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i>
             Bem vindo(a). {{user}}</span>
           <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
+<<<<<<< HEAD
+              href="{% url 'usuario:login' %}">Logar</a></span>
+          <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
+              href="#">Cadastre-se</a></span>
+=======
             href="{%url 'logout' %}">Sair</a></span>
 
             {%else%}
@@ -35,8 +40,13 @@
             
             <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
               href="{% url 'usuario:register' %}">Cadastre-se</a></span>
+<<<<<<< HEAD
+>>>>>>> dd53013b53bc827412924885249ffb108d55c823
+        </div>
+=======
               {%endif%}
             </div>
+>>>>>>> 31c11dbcc67f8827c6d64431c436b2befa6f65ab
       </div>
     </div>
   </div>
@@ -119,11 +129,13 @@
           </div>
         </div>
       </nav> -->
+  
 
 
-  {% block 'body' %}{% endblock%}
+    {% block 'body' %}{% endblock%}
+    
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
