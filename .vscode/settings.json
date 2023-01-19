@@ -23,7 +23,7 @@
         "--line-length=79",
     ],
     "python.testing.pytestArgs": [
-        "integrador"
+        "."
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
