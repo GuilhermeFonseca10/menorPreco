@@ -8,7 +8,6 @@ class SupermercadoForm(forms.ModelForm):
 
         fields = [
             "nome",
-            "imagem",
             "cpf",
             "cnpj",
             "cep",
@@ -16,5 +15,6 @@ class SupermercadoForm(forms.ModelForm):
             "bairro",
             "rua",
             "numero",
+            "imagem",
             "usuario",
         ]
