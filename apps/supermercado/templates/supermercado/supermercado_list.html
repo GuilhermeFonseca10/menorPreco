@@ -1,6 +1,22 @@
+{% extends "base.html" %}
 
+{% load bootstrap5 %}
+
+
+
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'usuario/usuario.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+<h1>supermercados</h1>
 {%for super in object_list %}
 <h1>Supermercado: {{super.nome}} </h1>
 <h1>Cidade: {{super.cidade}} </h1>
 
 {%endfor%}
+
+{%endblock%}
