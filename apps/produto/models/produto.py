@@ -18,6 +18,12 @@ class Produto(models.Model):
     categorias = models.ManyToManyField(
         "Categoria", verbose_name="Categorias", blank=True
     )
+    supermercados = models.ForeignKey(
+        "supermercado.Supermercado",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Produto"

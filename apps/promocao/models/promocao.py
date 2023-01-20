@@ -6,6 +6,12 @@ class Promocao(models.Model):
     produtos = models.ManyToManyField(
         "produto.Produto", verbose_name="Produto", blank=True
     )
+    supermercados = models.ForeignKey(
+        "supermercado.Supermercado",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Promoção"
