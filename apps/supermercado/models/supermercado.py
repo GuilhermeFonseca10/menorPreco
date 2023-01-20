@@ -20,6 +20,13 @@ class Supermercado(models.Model):
     numero = models.IntegerField(verbose_name="Número")
     date_joined = models.DateTimeField("Data de Entrada", auto_now_add=True)
 
+    usuario = models.ForeignKey(
+        "usuario.Usuario",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+
     def __str__(self):
         return self.nome
 
