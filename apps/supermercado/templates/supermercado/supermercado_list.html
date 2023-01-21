@@ -7,16 +7,34 @@
 {% load static %}
 
 {% block 'head' %}
-    <link href="{% static 'usuario/usuario.css' %}" rel="stylesheet">
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
 {% endblock %}
 
 
 {% block 'body' %}
-<h1>supermercados</h1>
-{%for super in object_list %}
-<h1>Supermercado: {{super.nome}} </h1>
-<h1>Cidade: {{super.cidade}} </h1>
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Supermercados</h3>
 
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a href="#">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://source.unsplash.com/collection/190728" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{super.nome}}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    {%for super in object_list %}
+    <h1>Supermercado: {{super.nome}} </h1>
+    <h1>Cidade: {{super.cidade}} </h1>
+</div>
 {%endfor%}
 
 {%endblock%}

@@ -11,13 +11,16 @@
 {% block 'body' %}
 
 
-                  <h3 class="text-primary">Adicionar supermercado</h3>
-              </div>
-              <form method="POST">
-                {%csrf_token%}
-                {{ form.non_field_errors }}
-                {% bootstrap_form form %}
-                          {% buttons submit='Gravar' %} {% endbuttons %} 
+                  
+  <div class="container">
+    <h3 class="text-primary mb-3 mt-5">Adicionar supermercado</h3>
+    <form method="POST">
+      {%csrf_token%}
+      {{ form.non_field_errors }}
+      {% bootstrap_form form %}
+      {% buttons submit='Gravar' %} {% endbuttons %}
+    </form>
+  </div>
                         
                           
             

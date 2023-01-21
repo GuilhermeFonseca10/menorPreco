@@ -4,19 +4,29 @@
 {% load static %}
 
 {% block 'head' %}
-    <link href="{% static 'usuario/usuario.css' %}" rel="stylesheet">
+<link href="{% static 'register/register.css' %}" rel="stylesheet">
 {% endblock %}
 
 
 {% block 'body' %}
 
-<section class="hero3">
-    <div class="site-description-register">
-      <h2>Cadastre-se</h2>
-      <br>
-      <form class="site-form-register" action="" method="post">
+<section class="container form-mod">
+  <div class="site-description-register">
+    <h3 class="text-primary mb-3 mt-5">Cadastre-se</h3>
+    <br>
+    <form method="POST">
+      {%csrf_token%}
+      <div class="">
+        {{ form.non_field_errors }}
+        {% bootstrap_form form %}
+      </div>
+      {% buttons submit='Registrar' %} {% endbuttons %}
+    </form>
+    <!-- <form method="post">
         {% csrf_token %}
+        
         {% for field in form %}
+        
         <div class="fieldWrapper-register">
           {{ field.errors }}
           <span class="field-tags">{{ field.label_tag }}</span> {{ field }}
@@ -26,10 +36,10 @@
         </div>
         {% endfor %}
         <button class="btn-register-auth" type="submit"><span>Register</span></button>
-      </form>
-      
-    </div>
-  </section>
+      </form> -->
+
+  </div>
+</section>
 
 
 {% endblock%}
