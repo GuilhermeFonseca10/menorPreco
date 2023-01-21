@@ -9,7 +9,9 @@ class Supermercado(models.Model):
 
     nome = models.CharField(verbose_name="Nome", max_length=100)
     imagem = models.ImageField(
-        verbose_name="Imagem", upload_to="supermercado/supermercados/"
+        null=True,
+        verbose_name="Imagem",
+        upload_to="supermercado/supermercados/",
     )
     cpf = models.CharField(verbose_name="CPF", max_length=11)
     cnpj = models.CharField(verbose_name="CNPJ", max_length=14)
