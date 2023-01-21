@@ -26,49 +26,36 @@
           {%if user.is_authenticated%}
           <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i>
             Bem vindo(a). {{user}}</span>
-          
+
           <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
+              href="{%url 'logout' %}">Sair</a></span>
 
-            href="{%url 'logout' %}">Sair</a></span>
-
-            {%else%}
-            <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
+          {%else%}
+          <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
               href="{% url 'login' %}">Entrar</a></span>
-            
-            <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
+
+          <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
               href="{% url 'usuario:register' %}">Cadastre-se</a></span>
 
         </div>
 
-              {%endif%}
-            </div>
-
+        {%endif%}
       </div>
+
     </div>
   </div>
-  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  </div>
+
+  <nav class="navbar navbar-expand-lg bg-primary sticky-top navbar-dark p-3 shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="{%url 'home'%}"><i class="fa-solid fa-shop me-2"></i> <strong>MENOR PREÇO</strong></a>
+      <a class="navbar-brand" href="{%url 'home'%}"><i class="fa-solid fa-shop me-2"></i> <strong>MENOR
+          PREÇO</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
-          <div class="input-group">
-            <span class="border-warning input-group-text bg-warning text-white"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" class="form-control border-warning" style="color:#7a7a7a">
-            <button class="btn btn-warning text-white">Procurar</button>
-          </div>
-        </div> -->
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-        <!-- <div class="ms-auto d-none d-lg-block">
-            <div class="input-group">
-              <span class="border-warning input-group-text bg-warning text-white"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <input type="text" class="form-control border-warning" style="color:#7a7a7a">
-              <button class="btn btn-warning text-white">Search</button>
-            </div>
-          </div> -->
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
             <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Ofertas</a>
@@ -87,77 +74,42 @@
     </div>
   </nav>
 
-    {% block 'body' %}{% endblock%}
+  {% block 'body' %}{% endblock%}
 
-    <footer class="">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div>
-              <h3>Logo</h3>
-              <p class="mb-30 footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad soluta facilis
-                eos quia optio iusto odit atque eum tempore, quisquam officiis vero veniam hic,</p>
-            </div>
-          </div>
-          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
-            <div class="">
-              <h4>Quick Link</h4>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#" class="text-decoration-none">Home</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">About Us</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">Service</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div>
-              <h4>Service</h4>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#" class="text-decoration-none">Marketing</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">Branding</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">Web Design</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none">Graphics Design</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div>
-              <h4>Newsletter</h4>
-              <div>
-                <label for="Newsletter" class="form-label">Subscribe To Our Newsletter</label>
-                <input type="text" class="form-control" Placeholder="Enter Your Email">
-                <button class="btn btn-danger mt-3">Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="copyright">
-            <p>Developed and maintained by <a href="#" target="_blank">company</a></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
+  <footer class="bg-light text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Google -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
+            class="fab fa-google"></i></a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Instagram -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i
+            class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
+            class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i
+            class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #2748F6;">
+      © 2023 Copyright:
+      <a class="text-white" href="#">menorPreço</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

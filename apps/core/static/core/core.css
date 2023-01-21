@@ -44,4 +44,13 @@
   }
 
   /* CARD */
-
+  
+.cad img{
+  width: 100%;
+}
+.main p{
+  font-size: 20px;
+}
+.titlemain{
+  text-align: center;
+}
