@@ -2,16 +2,10 @@
 
 {% load bootstrap5 %}
 
-
-
 {% load static %}
-
-
 
 {% block 'body' %}
 
-
-<<<<<<< HEAD
                   
   <div class="container">
     <h3 class="text-primary mb-3 mt-5">Adicionar supermercado</h3>
@@ -21,18 +15,6 @@
       {% bootstrap_form form %}
       {% buttons submit='Gravar' %} {% endbuttons %}
     </form>
-  </div>
-=======
-                  <h3 class="text-primary">Adicionar supermercado</h3>
-              </div>
-              <form method="POST" enctype="multipart/form-data">
-                {%csrf_token%}
-                
-                {% bootstrap_form form %}
-                          {% buttons submit='Gravar' %} {% endbuttons %} 
->>>>>>> f50b8e55f03542d92d620c864934e98694392499
-                        
-                          
-            
+  </div>            
 
 {% endblock%}
