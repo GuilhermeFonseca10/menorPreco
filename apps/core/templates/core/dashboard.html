@@ -111,22 +111,24 @@
         </div>
 
         <div class="row">
+            {%for list in object_list%}
             <div class="col-lg-3">
                 <div class="card card-margin">
                     <div class="card-header no-border">
-                        <h5 class="card-title">MASSAS</h5>
+                        <h5 class="card-title">{{list.nome}}</h5>
                     </div>
                     <div class="card-body pt-0">
                         <div class="widget-49">
                             <div class="widget-49-meeting-action">
-                                <a href="#" class="btn btn-sm btn-flash-border-primary">Ver Categoria</a>
+                                <a href="#" class="btn btn-sm btn-flash-border-primary">Ver supermercado</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {%endfor%}
 
-            <div class="col-lg-3">
+          <!--  <div class="col-lg-3">
                 <div class="card card-margin">
                     <div class="card-header no-border">
                         <h5 class="card-title">AÇOUGUE</h5>
@@ -189,7 +191,7 @@
         </div>
 
     </div>
-    
+    -->
 
 </div>
 <!--Container Main end-->

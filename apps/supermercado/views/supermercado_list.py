@@ -7,7 +7,7 @@ from utils.decorators import LoginRequiredMixin
 class SupermercadoListView(LoginRequiredMixin, ListView):
     model = Supermercado
 
-    def get_queryset(self):
+    def supermercado(self):
 
         super = Supermercado.objects.all()
 

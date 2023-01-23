@@ -15,11 +15,12 @@
 {% for usuario in object_list %} 
 <h1>Usuario</h1>
 
-   Nome {{usuario.username}}
+   Nome: {{usuario.username}}
    <br>
-    Email {{usuario.email}}
+    Email: {{usuario.email}}
     <br>
-    Ultimo acesso{{usuario.date_joined}}
+    Ultimo acesso: {{usuario.date_joined}}
+    
  <a href="#">Editar</a>
 {% endfor %} 
 <!--Container Main end-->
