@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'core/core.css' %}" rel="stylesheet">
+<!-- <script src="{% static 'js/admin.js' %}"></script> -->
+{% endblock %}
+
+
+{% block 'body' %}
+<br>
+<!--Cards Menu-->
+{% for usuario in object_list %} 
+<h1>Usuario</h1>
+
+   Nome {{usuario.username}}
+   <br>
+    Email {{usuario.email}}
+    <br>
+    Ultimo acesso{{usuario.date_joined}}
+ <a href="#">Editar</a>
+{% endfor %} 
+<!--Container Main end-->
+
+
+{% endblock%}
