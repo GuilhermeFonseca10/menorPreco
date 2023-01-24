@@ -9,6 +9,11 @@ from ..models.supermercado import Supermercado
 class SupermercadoCreateView(LoginRequiredMixin, CreateView):
     model = Supermercado
 
+    def get_queryset(self):
+        usuario = self.request.user
+
+        return Supermercado.objects.filter(usuario=usuario)
+
     form_class = SupermercadoForm
 
     success_url = "list"

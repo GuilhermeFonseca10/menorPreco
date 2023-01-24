@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Supermercado(models.Model):
@@ -23,10 +24,7 @@ class Supermercado(models.Model):
     date_joined = models.DateTimeField("Data de Entrada", auto_now_add=True)
 
     usuario = models.ForeignKey(
-        "usuario.Usuario",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
+        "usuario.Usuario", on_delete=models.CASCADE, null=True, blank=True
     )
 
     def __str__(self):
