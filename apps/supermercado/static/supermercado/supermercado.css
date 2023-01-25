@@ -1,3 +1,41 @@
 .geral a {
     text-decoration: none;
 }
+
+.geral h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* style supermercado_form */
+.form-style {
+    width: 100%;
+    max-width: 80%;
+}
+
+.form-style form{
+    width:  400px;
+    margin: auto;
+}
+
+/* card */
+.gallery{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.card-header{
+    width: 300px;
+  height: 200px;
+}
+.card-header:hover{
+    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
+}
+.card-header img{
+    
+    background-size: cover;
+}
+.card-title{
+    font-size: 18px;
+}

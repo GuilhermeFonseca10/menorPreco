@@ -4,11 +4,17 @@
 
 {% load static %}
 
+{% block 'head' %}
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block 'body' %}
 
                   
-  <div class="container">
-    <h3 class="text-primary mb-3 mt-5">Adicionar supermercado</h3>
+
+  <div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Adicionar supermercado</h3>
+    <div class="form-style"></div>
     <form method="post" enctype="multipart/form-data">
       {%csrf_token%}
       {{ form.non_field_errors }}
@@ -27,5 +33,7 @@
       {% buttons submit='Salvar' %} {% endbuttons %}
     </form>
   </div>            
+
+
 
 {% endblock%}

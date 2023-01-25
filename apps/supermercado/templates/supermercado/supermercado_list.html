@@ -12,30 +12,41 @@
 
 
 {% block 'body' %}
-<div class="container geral">
+<div class="container">
     <h3 class="text-primary mb-5 mt-5">Supermercados</h3>
-    {%for super in object_list %}
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-        <a href="#">
-            <div class="col">
-                
-                <div class="card h-100">
-                    {%if super.imagem%}
-                    <img src="{{super.imagem.url}}" class="card-img-top" alt="...">
-                   {%endif%}
-                    <div class="card-body">
-                        </div>
 
-                        <h5 class="card-title">Supermercado {{super.nome}}</h5>
-                        <p class="card-text">Cidade: {{super.cidade}}</p>
-                           
+    <section>
+        <div class="row">
+            {%for super in object_list %}
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    {%if super.imagem%}
+                        <img src="{{super.imagem.url}}" class="card-img-top" alt="...">
+                    {%endif%}
+                    <div class="card-body">
+                        <h5 class="card-title">{{super.nome}}</h5>
+                        <p class="card-text">{{super.cidade}}</p>
+                        <a href="" class="btn btn-outline-primary btn-sm">Comfira!</a>
+                        <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
                     </div>
                 </div>
             </div>
-        </a>
-        {%endfor%}
-    </div>
+            {%endfor%}
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
     
 
     
