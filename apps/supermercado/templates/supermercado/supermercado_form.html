@@ -12,7 +12,18 @@
     <form method="post" enctype="multipart/form-data">
       {%csrf_token%}
       {{ form.non_field_errors }}
-      {% bootstrap_form form %}
+      {% bootstrap_field form.nome %}
+      {% bootstrap_field form.imagem %}
+      {% bootstrap_field form.cpf %}
+      {% bootstrap_field form.cnpj %}
+      {% bootstrap_field form.cep %}
+      {% bootstrap_field form.cidade %}
+      {% bootstrap_field form.bairro %}
+      {% bootstrap_field form.rua %}
+      {% bootstrap_field form.numero %}
+      <div style="pointer-events: none;">
+        {% bootstrap_field form.usuario %}
+      </div>
       {% buttons submit='Salvar' %} {% endbuttons %}
     </form>
   </div>            

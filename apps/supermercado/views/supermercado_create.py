@@ -10,7 +10,7 @@ class SupermercadoCreateView(LoginRequiredMixin, CreateView):
     model = Supermercado
 
     def get_queryset(self):
-        usuario = self.request.user
+        usuario = self.request.user.id
 
         return Supermercado.objects.filter(usuario=usuario)
 

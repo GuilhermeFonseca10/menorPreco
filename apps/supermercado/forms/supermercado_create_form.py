@@ -7,4 +7,20 @@ class SupermercadoForm(forms.ModelForm):
     class Meta:
         model = Supermercado
 
-        fields = "__all__"
+        fields = [
+            "nome",
+            "cnpj",
+            "cpf",
+            "cep",
+            "cidade",
+            "bairro",
+            "rua",
+            "numero",
+            "imagem",
+            "usuario",
+        ]
+
+    def __init__(self, *args, **kwargs):
+        super(SupermercadoForm, self).__init__(*args, **kwargs)
+        self.initial["usuario"] = get_current_user().id
+        # self.fields["usuario"].widget.attrs["disabled"] = True
