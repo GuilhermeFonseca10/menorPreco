@@ -1,4 +1,4 @@
-# from crum import get_current_user
+from crum import get_current_user
 from django import forms
 from supermercado.models.supermercado import Supermercado
 
