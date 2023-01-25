@@ -14,7 +14,7 @@
 
   <div class="container geral">
     <h3 class="text-primary mb-5 mt-5">Adicionar supermercado</h3>
-    <div class="form-style"></div>
+    <div class="form-style">
     <form method="post" enctype="multipart/form-data">
       {%csrf_token%}
       {{ form.non_field_errors }}
@@ -33,7 +33,7 @@
       {% buttons submit='Salvar' %} {% endbuttons %}
     </form>
   </div>            
-
+</div>
 
 
 {% endblock%}
