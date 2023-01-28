@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 
 class Supermercado(models.Model):
@@ -29,6 +29,9 @@ class Supermercado(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_absolute_url(self):
+        return reverse("supermercado_detail", args=[str(self.id)])
 
     class Meta:
         app_label = "supermercado"

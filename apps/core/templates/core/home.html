@@ -59,45 +59,28 @@
 <br>
 
 <!-- Cards Categorias -->
-<div class="container">
-  <section>
-    <div class="row">
-      <div class="col-lg-3 mb-3 prod">
-        <div class="card card-header">
-          <img src="../../static/core/img/heineken.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <h5 class="card-title">Nome do Produto</h5>
-            <p class="card-text"><strong>Preço</strong></p>
-            <p class="card-text">supermercado</p>
-            <p class="card-text">cidade</p>
+<section>
+  <div class="row">
+      {%for produto in object_list %}
+      <div class="col-lg-3 mb-3 gallery">
+          
+          <div class="card card-header">
+              {%if produto.imagem%}
+                  <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+              {%endif%}
+              <div class="card-body">
+                  <h5 class="card-title">Produto: {{produto.nome}}</h5>
+                  <p class="card-text">Valor: {{produto.valor}} R$</p>
+                  <p class="card-text">Descrição: {{produto.descricao}}</p>
+                  <p class="card-text">Supermercado: {{produto.supermercados}}</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Comfira!</a>
+                  <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+              </div>
           </div>
-        </div>
       </div>
-
-      <div class="col-lg-3 mb-3 prod">
-        <div class="card card-header">
-          <img src="../../static/core/img/heineken.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <h5 class="card-title">Nome do Produto</h5>
-            <p class="card-text"><strong>Preço</strong></p>
-            <p class="card-text">supermercado</p>
-            <p class="card-text">cidade</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 mb-3 prod">
-        <div class="card card-header">
-          <img src="../../static/core/img/heineken.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <h5 class="card-title">Nome do Produto</h5>
-            <p class="card-text"><strong>Preço</strong></p>
-            <p class="card-text">supermercado</p>
-            <p class="card-text">cidade</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      {%endfor%}
+  </div>
+</section>
 </div>
 <br>
 

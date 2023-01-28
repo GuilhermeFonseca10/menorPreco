@@ -6,6 +6,7 @@ from ..models.produto import Produto
 @admin.register(Produto)
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = [
+        "id",
         "nome",
         "valor",
         "estoque",
