@@ -5,6 +5,9 @@ a {
   .superNav {
     font-size:12px;
   }
+  .nav-menu .navbar-brand{
+    font-size: 24px;
+  }
   .form-control {
     outline:none !important;
     box-shadow: none !important;

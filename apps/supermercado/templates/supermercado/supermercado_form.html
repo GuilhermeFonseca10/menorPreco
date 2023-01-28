@@ -17,7 +17,15 @@
     <div class="form-style">
     <form method="post" enctype="multipart/form-data">
       {%csrf_token%}
-      {{ form.non_field_errors }}
+      <!-- <form method="POST"> -->
+        {%csrf_token%}
+        <div class="">
+          {{ form.non_field_errors }}
+          {% bootstrap_form form %}
+        </div>
+        {% buttons submit='Salvar' %} {% endbuttons %}
+      <!-- </form> -->
+      <!-- {{ form.non_field_errors }}
       {% bootstrap_field form.nome %}
       {% bootstrap_field form.imagem %}
       {% bootstrap_field form.cpf %}
@@ -31,7 +39,7 @@
         {% bootstrap_field form.usuario %}
       </div>
       {% buttons submit='Salvar' %} {% endbuttons %}
-    </form>
+    </form> -->
   </div>            
 </div>
 

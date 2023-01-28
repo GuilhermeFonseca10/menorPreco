@@ -22,22 +22,6 @@
       </div>
       {% buttons submit='Registrar' %} {% endbuttons %}
     </form>
-    <!-- <form method="post">
-        {% csrf_token %}
-        
-        {% for field in form %}
-        
-        <div class="fieldWrapper-register">
-          {{ field.errors }}
-          <span class="field-tags">{{ field.label_tag }}</span> {{ field }}
-          {% if field.help_text %}
-          <p class="help">{{ field.help_text|safe }}</p>
-          {% endif %}
-        </div>
-        {% endfor %}
-        <button class="btn-register-auth" type="submit"><span>Register</span></button>
-      </form> -->
-
   </div>
 </section>
 

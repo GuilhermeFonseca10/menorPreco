@@ -12,7 +12,7 @@ from django.db import models
 class Usuario(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(
-        "Apelido / Usuário",
+        "Usuário",
         max_length=30,
         unique=True,
         validators=[

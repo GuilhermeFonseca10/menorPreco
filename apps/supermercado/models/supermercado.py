@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class Supermercado(models.Model):
     """
     A classe Supermercado serve para armazernar os(as) supermercados do sistema.
