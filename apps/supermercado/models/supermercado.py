@@ -30,9 +30,6 @@ class Supermercado(models.Model):
     def __str__(self):
         return self.nome
 
-    def get_absolute_url(self):
-        return reverse("supermercado_detail", args=[str(self.id)])
-
     class Meta:
         app_label = "supermercado"
         verbose_name = "Supermercado"
