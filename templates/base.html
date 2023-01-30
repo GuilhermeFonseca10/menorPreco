@@ -23,8 +23,6 @@
          
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-lg-block d-md-block-d-sm-block d-xs-none text-end">
-          
-          
           <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
               href="{%url 'dashboard' %}">Acessar Admin</a></span>
 
@@ -32,15 +30,16 @@
               href="{%url 'logout' %}">Sair</a></span>
 
           {%else%}
-          <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted"
+          <span class="me-3"><i class="fa-solid fa-file text-muted me-2"></i><a class="text-muted"
               href="{% url 'login' %}">Entrar</a></span>
 
           <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted"
               href="{% url 'usuario:register' %}">Cadastre-se</a></span>
 
-        </div>
-
+       
+            </div>
         {%endif%}
+      
       </div>
 
     </div>
@@ -58,16 +57,11 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
-            <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="{%url 'produto_list'%}">Ofertas</a>
+            <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="{%url 'home'%}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2 text-uppercase" href="{%url 'supermercado_list'%}">Supermercados</a>
           </li>
-          
-          <li class="nav-item">
-            <a class="nav-link mx-2 text-uppercase" href="{%url 'supermercado_create'%}">Divulgue conosco</a>
-          </li>
-        
           <li class="nav-item">
             <a class="nav-link mx-2 text-uppercase" href="#">Sobre</a>
           </li>

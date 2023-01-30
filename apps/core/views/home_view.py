@@ -1,8 +1,15 @@
-from django.views.generic.base import TemplateView
+from django.views.generic import ListView
+from produto.models.produto import Produto
 
-from utils.decorators import LoginRequiredMixin
 
+class HomeView(ListView):
 
-class HomeView(TemplateView):
+    model = Produto
+
+    def produto(self):
+
+        produto = Produto.objects.all()
+
+        return produto
 
     template_name = "core/home.html"
