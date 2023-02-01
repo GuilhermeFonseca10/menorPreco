@@ -25,8 +25,10 @@
                         <img src="{{super.imagem.url}}" class="card-img-top" alt="...">
                     {%endif%}
                     <div class="card-body">
-                        <h5 class="card-title">{{super.nome}}</h5>
-                        <p class="card-text">{{super.cidade}}</p>
+                        <h5 class="card-title">Supermercado:{{super.nome}}</h5>
+                        <p class="card-text">Localização:{{super.cidade}}, {{super.bairro}}, {{super.rua}}, {{super.numero}}</p>
+                    
+                        
                         <a href="{%url 'supermercado_detail' super.id %}" class="btn btn-outline-primary btn-sm">Comfira!</a>
                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
                     </div>

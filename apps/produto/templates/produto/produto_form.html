@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block 'body' %}
+
+                  
+
+  <div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Adicionar produto</h3>
+    <div class="form-style">
+    <form method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+      <!-- <form method="POST"> -->
+        {%csrf_token%}
+        <div class="">
+          {{ form.non_field_errors }}
+         
+       
+      
+       </form> 
+       {{ form.non_field_errors }}
+      {% bootstrap_form form %}
+     
+    
+      {% buttons submit='Salvar' %} {% endbuttons %}
+    </form> 
+  </div>
+  </div>            
+</div>
+
+
+{% endblock%}

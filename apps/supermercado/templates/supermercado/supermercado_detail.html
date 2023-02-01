@@ -1,1 +1,40 @@
-{{supermercado.nome}}
+{% extends "admin_base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'core/core.css' %}" rel="stylesheet">
+<!-- <script src="{% static 'js/admin.js' %}"></script> -->
+{% endblock %}
+
+
+{% block 'body' %}
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Supermercados</h3>
+
+    <section>
+        <div class="row">
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    {%if supermercado.imagem%}
+                        <img src="{{supermercado.imagem.url}}" class="card-img-top" alt="...">
+                    {%endif%}
+                    <div class="card-body">
+                        <h5 class="card-title">Supermercado:{{supermercado.nome}}</h5>
+                        <p class="card-text">Localização:{{supermercado.cidade}}, {{supermercado.bairro}}, {{supermercado.rua}}, {{supermercado.numero}}</p>
+                    
+                        
+                        
+                        <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+
+{% endblock%}
