@@ -13,44 +13,32 @@
 
 {% block 'body' %}
 <div class="container geral">
-    <h3 class="text-primary mb-5 mt-5">Supermercados</h3>
-
+    <h3 class="text-primary mb-5 mt-5">Supermercado {{supermercado}}</h3>
+   <p>Confira nossas ofertas</p>
     <section>
         <div class="row">
-            {%for super in object_list %}
             <div class="col-lg-3 mb-3 gallery">
                 
                 <div class="card card-header">
-                    {%if super.imagem%}
-                        <img src="{{super.imagem.url}}" class="card-img-top" alt="...">
+                    {% for produto in supermercado.produto_set.all %}
+                    {%if produto.imagem%}
+                        <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
                     {%endif%}
                     <div class="card-body">
-                        <h5 class="card-title">Supermercado:{{super.nome}}</h5>
-                        <p class="card-text">Localização:{{super.cidade}}, {{super.bairro}}, {{super.rua}}, {{super.numero}}</p>
-                    
+                        <h5 class="card-title">Produto: {{produto.nome}}</h5>
+                        <p class="card-text">Valor: {{produto.valor}} R$</p>
+                        <p class="card-text">Descrição: {{produto.descricao}}</p>
+                        {%endfor%}
                         
-                        <a href="{%url 'supermercado_detail_usuario' super.id %}" class="btn btn-outline-primary btn-sm">Comfira!</a>
+                        
                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
                     </div>
                 </div>
             </div>
-            {%endfor%}
+            
         </div>
     </section>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-{%endblock%}
+{% endblock%}

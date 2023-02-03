@@ -34,3 +34,11 @@ class Supermercado(models.Model):
         app_label = "supermercado"
         verbose_name = "Supermercado"
         verbose_name_plural = "Supermercados"
+
+    @property
+    def get_absolute_url(self):
+        return reverse("supermercado_update", args=[str(self.id)])
+
+    @property
+    def get_delete_url(self):
+        return reverse("supermercado_delete", args=[str(self.id)])

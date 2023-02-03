@@ -11,6 +11,7 @@
 {% block 'body' %}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+ <!--
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
       aria-current="true" aria-label="Slide 1"></button>
@@ -19,17 +20,19 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
       aria-label="Slide 3"></button>
   </div>
+  -->
   <div class="carousel-inner markting">
-    <div class="carousel-item active">
-      <img src="https://source.unsplash.com/collection/190726/3000x900" class="d-block w-100" alt="image">
+    {%for prod in object_list%}
+    <div class="carousel-item {% if forloop.first %} active {%endif%}">
+     
+      {%if prod.imagem%}
+      <img src="{{prod.imagem.url}}" class="d-block w-100" alt="image">
+      {%endif%}
+      
     </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/collection/190727/3000x900" class="d-block w-100" alt="image">
-    </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/collection/190728/3000x900" class="d-block w-100" alt="image">
-    </div>
+    {%endfor%}
   </div>
+ 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -38,7 +41,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+  
 </div>
+
 <br>
 <h3 class="title-main">Os melhores preços você encontra aqui!</h3>
 <hr>
@@ -82,6 +87,7 @@
                   <h5 class="card-title">Produto: {{produto.nome}}</h5>
                   <p class="card-text">Valor: {{produto.valor}} R$</p>
                   <p class="card-text">Supermercado: {{produto.supermercados}}</p>
+                  <p class="card-text">Localização: {{produto.supermercados.cidade}}</p>
                   <p class="card-text">Descrição: {{produto.descricao}}</p>
                  
                   <a href="#" class="btn btn-outline-primary btn-sm">Comfira!</a>
@@ -89,6 +95,7 @@
               </div>
           </div>
       </div>
+     
       {%endfor%}
   </div>
 </section>

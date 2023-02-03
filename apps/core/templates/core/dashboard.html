@@ -102,14 +102,14 @@
         </div>
     </div>
 
-    <!-- Cards Categorias 
+  
     <div class="container">
         <div class="row mt-3 mb-5">
-            <div class="col-md-2 bg-side sidebar">
-                <a href="{%url 'supermercado_create'%}"><button type="button" class="btn btn-primary">Adicionar supermercado</button></a>
+            <div class=" bg-side sidebar">
+                <a href="{%url 'supermercado_create'%}"><button type="button" class="btn btn-primary">Novo supermercado</button></a>
             </div>
         </div>
--->
+
         <div class="row">
             {%for list in object_list%}
             <div class="col-lg-3">
@@ -121,6 +121,12 @@
                         <div class="widget-49">
                             <div class="widget-49-meeting-action">
                                 <a href="{%url 'supermercado_detail' list.id%}" class="btn btn-sm btn-flash-border-primary">Ver supermercado</a>
+                            </div>
+                            <div class="widget-49-meeting-action">
+                                <a href="{%url 'supermercado_update' list.id%}" class="btn btn-sm btn-flash-border-primary">Editar</a>
+                            </div>
+                            <div class="widget-49-meeting-action">
+                                <a href="{%url 'supermercado_delete' list.id%}" class="btn btn-sm btn-flash-border-primary">Deletar</a>
                             </div>
                         </div>
                     </div>
