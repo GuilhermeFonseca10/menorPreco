@@ -22,7 +22,7 @@ class  MenorPrecoBase(TestCase):
         return user
 
     def login(self):
-        user_logged = self.cliente.login(email = 'testuser@hotmail.com', password = 't1234567.')
+        user_logged = self.cliente.login(email = 'test@hotmail.com', password = 't1234567.')
         return user_logged
     
     
