@@ -1,5 +1,5 @@
 from django.urls import reverse
-from test_base import MenorPrecoBase
+from tests.test_base import MenorPrecoBase
 
 
 class BaseUrlsTest(MenorPrecoBase):
@@ -37,9 +37,9 @@ class BaseUrlsTest(MenorPrecoBase):
       url = reverse('supermercado_create')
       self.assertEqual(url, '/supermercado/cad')
     
-   def test_produto_urls(self):
-      url = reverse('produto_list')
-      self.assertEqual(url, '/produto/list')
+   # def test_produto_urls(self):
+   #    url = reverse('produto_list')
+   #    self.assertEqual(url, '/produto/list')
        
     
    

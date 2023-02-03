@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from test_base import MenorPrecoBase
+from tests.test_base import MenorPrecoBase
 
  #  ---------------------------- TESTANDO VIEWS --------------------------------------   
    
