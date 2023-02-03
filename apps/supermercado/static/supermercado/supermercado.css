@@ -1,16 +1,165 @@
-.geral a {
+/* CARDS DA HOME */
+/* .card-product {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+  }
+  
+  .card-product img {
+    padding-top: 10px;
+    width: 40%;
+    height: 110px;
+    object-fit: cover;
+  }
+  
+  .card-content-product {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card-title-product {
+    font-size: 24px;
+    margin: 1px;
+  }
+  
+  .card-description-product {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: -5px;
+  }
+  
+  .card-content-product a{
+    margin: 10px;
+  }
+  
+  .card-price-product {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+  } */
+
+
+
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .img-product img{
+    width: 30px;
+  }
+  
+  .title-super h3 {
+    font-size: 1.5em;
+    margin: 50px;
+    color: rgb(92, 91, 91);
+  }
+
+  .title-super b {
+    color: blue;
+  }
+  
+  table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+/* .geral a {
     text-decoration: none;
 }
 
 .geral h3 {
-    /* text-transform: uppercase; */
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-}
+} */
 
 /* style supermercado_form */
-.form-style {
+/* .form-style {
     width: 100%;
     max-width: 100%;
 }
@@ -18,10 +167,10 @@
 .form-style form{
     width:  400px;
     margin: auto;
-}
+} */
 
 /* card */
-.gallery{
+/* .gallery{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -36,11 +185,10 @@
     box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
 }
 .card-header img{
-    /* border: 1px solid red; */
     width: 220px;
     height: 150px;
     margin: auto;
 }
 .card-title{
     font-size: 18px;
-}
+} */

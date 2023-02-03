@@ -118,15 +118,16 @@
                         <h5 class="card-title">{{list.nome}}</h5>
                     </div>
                     <div class="card-body pt-0">
-                        <div class="widget-49">
+                        <div class="widget-49-meeting-action">
+                            <a href="{%url 'supermercado_detail' list.id%}" class="btn btn-sm btn-flash-border-primary">Ver supermercado</a>
+                        </div>
+                        <br>
+                        <div class="actions">
                             <div class="widget-49-meeting-action">
-                                <a href="{%url 'supermercado_detail' list.id%}" class="btn btn-sm btn-flash-border-primary">Ver supermercado</a>
+                                <a href="{%url 'supermercado_update' list.id%}" class="btn btn-outline-primary btn-sm">Editar</a>
                             </div>
                             <div class="widget-49-meeting-action">
-                                <a href="{%url 'supermercado_update' list.id%}" class="btn btn-sm btn-flash-border-primary">Editar</a>
-                            </div>
-                            <div class="widget-49-meeting-action">
-                                <a href="{%url 'supermercado_delete' list.id%}" class="btn btn-sm btn-flash-border-primary">Deletar</a>
+                                <a href="{%url 'supermercado_delete' list.id%}" class="btn btn-outline-danger btn-sm">Deletar</a>
                             </div>
                         </div>
                     </div>

@@ -35,13 +35,13 @@
  -->
  <div class="carousel-inner markting">
  <div class="carousel-item active">
- <img src="media/super.jpg" class="d-block w-100" alt="image">
+ <!-- <img src="media/super.jpg" class="d-block w-100" alt="image"> -->
 </div>
 <div class="carousel-item active">
-  <img src="media/super2.jpg" class="d-block w-100" alt="image">
+  <!-- <img src="media/super2.jpg" class="d-block w-100" alt="image"> -->
  </div>
  <div class="carousel-item active">
-  <img src="media/super3.avif" class="d-block w-100" alt="image">
+  <!-- <img src="media/super3.avif" class="d-block w-100" alt="image"> -->
  </div>
 </div>
 </div>
@@ -75,9 +75,31 @@
 
 <br>
 
+<div class="container">
+  <div class="row">
+    {%for produto in object_list %}
+    <div class="card-product">
+      {%if produto.imagem%}
+        <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+      {%endif%}
+      <div class="card-content-product">
+        <h5 class="card-title-product">{{produto.nome}}</h5>
+        <p class="card-price-product">{{produto.valor}} R$</p>
+        <p class="card-description-product"><b>Supermercado:</b> {{produto.supermercados}}</p>
+        <p class="card-description-product"><b>Localização:</b> {{produto.supermercados.cidade}}</p>
+        <p class="card-description-product"><b>Descrição:</b> {{produto.descricao}}</p>
+        <a href="{%url 'produto_detail' produto.id%}" class="btn btn-outline-primary btn-sm">Comfira!</a>
+      </div>
+      <br>
+    </div>
+    {%endfor%}
+    </div>
+</div>
+
+
 
 <!-- Cards Categorias -->
-<section>
+<!-- <section>
   <div class="row">
       {%for produto in object_list %}
       <div class="col-lg-3 mb-3 gallery">
@@ -93,15 +115,15 @@
                   <p class="card-text">Localização: {{produto.supermercados.cidade}}</p>
                   <p class="card-text">Descrição: {{produto.descricao}}</p>
                  
-                  <a href="{%url 'produto_detail' produto.id%}" class="btn btn-outline-primary btn-sm">Comfira!</a>
+                  <a href="{%url 'produto_detail' produto.id%}" class="btn btn-outline-primary btn-sm">Comfira!</a> -->
                   <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
-              </div>
+              <!-- </div>
           </div>
       </div>
      
       {%endfor%}
   </div>
-</section>
+</section> -->
 </div>
 <br>
 

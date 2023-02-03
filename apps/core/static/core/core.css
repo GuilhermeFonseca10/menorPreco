@@ -122,3 +122,57 @@
 .prod p {
   margin: 0;
 }
+
+/* CARDS DA HOME */
+.card-product {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.card-product img {
+  padding-top: 10px;
+  width: 40%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.card-content-product {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title-product {
+  font-size: 24px;
+  margin: 1px;
+}
+
+.card-description-product {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: -5px;
+}
+
+.card-content-product a{
+  margin: 10px;
+}
+
+.card-price-product {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+/* css dashboard */
+
+.actions{
+  display: flex;
+  justify-content: space-evenly;
+}
+
