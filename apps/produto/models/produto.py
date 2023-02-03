@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Produto(models.Model):
@@ -32,3 +33,7 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
+
+    @property
+    def get_absolute_url(self):
+        return reverse("produto_update", args=[str(self.id)])

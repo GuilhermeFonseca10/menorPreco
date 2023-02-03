@@ -47,11 +47,14 @@
                     {% for produto in supermercado.produto_set.all %}
                     {%if produto.imagem%}
                         <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
-                    {%endif%}
+                        {%endif%}
                     <div class="card-body">
                         <h5 class="card-title">Produto: {{produto.nome}}</h5>
                         <p class="card-text">Valor: {{produto.valor}} R$</p>
                         <p class="card-text">Descrição: {{produto.descricao}}</p>
+                        <div class="widget-49-meeting-action">
+                            <a href="{%url 'produto_update' produto.id%}" class="btn btn-sm btn-flash-border-primary">Editar</a>
+                        </div>
                         {%endfor%}
                         
                         

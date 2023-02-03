@@ -11,7 +11,7 @@
 {% block 'body' %}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
- <!--
+
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
       aria-current="true" aria-label="Slide 1"></button>
@@ -20,7 +20,7 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
       aria-label="Slide 3"></button>
   </div>
-  -->
+   <!--
   <div class="carousel-inner markting">
     {%for prod in object_list%}
     <div class="carousel-item {% if forloop.first %} active {%endif%}">
@@ -32,7 +32,19 @@
     </div>
     {%endfor%}
   </div>
- 
+ -->
+ <div class="carousel-inner markting">
+ <div class="carousel-item active">
+ <img src="media/super.jpg" class="d-block w-100" alt="image">
+</div>
+<div class="carousel-item active">
+  <img src="media/super2.jpg" class="d-block w-100" alt="image">
+ </div>
+ <div class="carousel-item active">
+  <img src="media/super3.avif" class="d-block w-100" alt="image">
+ </div>
+</div>
+</div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -80,7 +92,7 @@
                   <p class="card-text">Localização: {{produto.supermercados.cidade}}</p>
                   <p class="card-text">Descrição: {{produto.descricao}}</p>
                  
-                  <a href="#" class="btn btn-outline-primary btn-sm">Comfira!</a>
+                  <a href="{%url 'produto_detail' produto.id%}" class="btn btn-outline-primary btn-sm">Comfira!</a>
                   <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
               </div>
           </div>
