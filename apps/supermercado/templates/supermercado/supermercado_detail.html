@@ -4,16 +4,25 @@
 {% load static %}
 
 {% block 'head' %}
-<link href="{% static 'core/core.css' %}" rel="stylesheet">
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+<!-- <link href="{% static 'core/core.css' %}" rel="stylesheet"> -->
 <!-- <script src="{% static 'js/admin.js' %}"></script> -->
 {% endblock %}
 
 
 {% block 'body' %}
-<div class="container geral">
-    <h3 class="text-primary mb-5 mt-5">Supermercado {{supermercado.nome}}</h3>
+<br>
+<div class="title-super">
+    <h3>Você está no: <b>{{supermercado.nome}}</b></h3>
+
     <a href="{%url 'produto_create'%}"><button type="button" class="btn btn-primary">Adicionar produto</button></a>
+
+</div>
+<!-- 
     <a href="{%url 'produto_list_admin'%}"><button type="button" class="btn btn-primary">Seus produtos</button></a>
+
+    
+
     <section>
         <div class="row">
             <div class="col-lg-3 mb-3 gallery">
@@ -26,50 +35,66 @@
                         <h5 class="card-title">Supermercado:{{supermercado.nome}}</h5>
                         <p class="card-text">Localização:{{supermercado.cidade}}, {{supermercado.bairro}}, {{supermercado.rua}}, {{supermercado.numero}}</p>
                     
-                        
+                         -->
                         
                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
-                    </div>
+                    <!-- </div>
                 </div>
             </div>
             
         </div>
     </section>
-</div>
+</div> -->
+<br>
 
-<div class="container geral">
+<table>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Produto</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    {% for produto in supermercado.produto_set.all %}
+    <tbody>
+      <tr>
+        <td class="img-product">
+            {%if produto.imagem%}
+                <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+            {%endif%}
+        </td>
+        <td data-label="Produto">{{produto.nome}}</td>
+        <td data-label="Valor">{{produto.valor}}</td>
+        <td data-label="Descrição">{{produto.descricao}}</td>
+        <td data-label="Ação">
+            <a href="{%url 'produto_update' produto.id%}" class="btn btn-outline-primary btn-sm">Edita</a>
+        </td>
+      </tr>
+    </tbody>
+    {%endfor%}
+  </table>
+
+
+<!-- <div class="container">
     <h3 class="text-primary mb-5 mt-5">Produtos do seu supermercado</h3>
-   
-    <section>
-        <div class="row">
-            <div class="col-lg-3 mb-3 gallery">
-                
-                <div class="card card-header">
-                    {% for produto in supermercado.produto_set.all %}
-                    {%if produto.imagem%}
-                        <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
-                        {%endif%}
-                    <div class="card-body">
-                        <h5 class="card-title">Produto: {{produto.nome}}</h5>
-                        <p class="card-text">Valor: {{produto.valor}} R$</p>
-                        <p class="card-text">Descrição: {{produto.descricao}}</p>
-                        <div class="widget-49-meeting-action">
-                            <a href="{%url 'produto_update' produto.id%}" class="btn btn-sm btn-flash-border-primary">Editar</a>
-                        </div>
-                        {%endfor%}
-                        
-                        
-                        <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
-                    </div>
-                </div>
-            </div>
-            
+    <div class="row">
+        {% for produto in supermercado.produto_set.all %}
+      <div class="card-product">
+        {%if produto.imagem%}
+            <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+        {%endif%}
+        <div class="card-content-product">
+          <h5 class="card-title-product">{{produto.nome}}</h5>
+          <p class="card-price-product">{{produto.valor}} R$</p>
+          <p class="card-description-product"><b>Descrição:</b> {{produto.descricao}}</p>
+          <a href="{%url 'produto_update' produto.id%}" class="btn btn-outline-primary btn-sm">Edita</a>
         </div>
-    </section>
-</div>
+        <br>
+      </div>
+      {%endfor%}
+      </div>
+  </div> -->
 
-
-
-
-
-{% endblock%}
+{% endblock%} -->
