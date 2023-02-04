@@ -1,7 +1,7 @@
 from django.urls import path
 from produto.views.produto_create_ import ProdutoCreateView
+from produto.views.produto_delete import ProdutoDeleteView
 from produto.views.produto_detail import ProdutoDetailView
-from produto.views.produto_list_admin import ProdutoListAdminView
 from produto.views.produto_update import ProdutoUpdateView
 
 urlpatterns = [
@@ -17,8 +17,8 @@ urlpatterns = [
         name="produto_update",
     ),
     path(
-        "listadmin",
-        ProdutoListAdminView.as_view(),
-        name="produto_list_admin",
+        "delete/<int:pk>/",
+        ProdutoDeleteView.as_view(),
+        name="produto_delete",
     ),
 ]

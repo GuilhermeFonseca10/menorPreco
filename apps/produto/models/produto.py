@@ -37,3 +37,7 @@ class Produto(models.Model):
     @property
     def get_absolute_url(self):
         return reverse("produto_update", args=[str(self.id)])
+
+    @property
+    def get_delete_url(self):
+        return reverse("produto_delete", args=[str(self.id)])
