@@ -1,0 +1,45 @@
+{% extends "admin_base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'core/core.css' %}" rel="stylesheet">
+<!-- <script src="{% static 'js/admin.js' %}"></script> -->
+{% endblock %}
+
+
+{% block 'body' %}
+
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Produtos do seu supermercado</h3>
+   
+    <section>
+        <div class="row">
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    {% for produtos in supermercado.produto_set.all %}
+                    {%if produto.imagem%}
+                        <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+                        {%endif%}
+                    <div class="card-body">
+                        <h5 class="card-title">Produto: {{produtos.nome}}</h5>
+                        <p class="card-text">Valor: {{produto.valor}} R$</p>
+                        <p class="card-text">Descrição: {{produto.descricao}}</p>
+                        <div class="widget-49-meeting-action">
+                            <a href="{%url 'produto_update' produto.id%}" class="btn btn-sm btn-flash-border-primary">Editar</a>
+                        </div>
+                        {%endfor%}
+                        
+                        
+                        <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+{%endblock%}
