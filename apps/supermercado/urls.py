@@ -3,6 +3,7 @@ from django.urls import path
 from .views.supermercado_create import SupermercadoCreateView
 from .views.supermercado_delete import SupermercadoDeleteView
 from .views.supermercado_detail import SupermercadoDetailView
+from .views.supermercado_detail_categoria import SupermercadoCategoriaView
 from .views.supermercado_detail_usuario import SupermercadoUsuarioDetailView
 from .views.supermercado_list import SupermercadoListView
 from .views.supermercado_update import SupermercadoUpdateView
@@ -29,5 +30,10 @@ urlpatterns = [
         "detailusuario/<int:pk>/",
         SupermercadoUsuarioDetailView.as_view(),
         name="supermercado_detail_usuario",
+    ),
+    path(
+        "supermercado_categoria/<int:pk>/",
+        SupermercadoCategoriaView.as_view(),
+        name="supermercado_categoria",
     ),
 ]

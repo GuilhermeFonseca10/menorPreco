@@ -1,4 +1,3 @@
-from django.urls import reverse_lazy
 from django.views.generic import DeleteView
 from produto.models.produto import Produto
 

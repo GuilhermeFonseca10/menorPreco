@@ -16,9 +16,9 @@
     <h3>Você está no: <b>{{supermercado.nome}}</b></h3>
 
     <a href="{%url 'produto_create'%}"><button type="button" class="btn btn-primary">Adicionar produto</button></a>
-    <a href="{%url 'categoria_create'%}"><button type="button" class="btn btn-primary">Categorias</button></a>
+    <a href="{%url 'supermercado_categoria' supermercado.id%}"><button type="button" class="btn btn-primary">Categorias</button></a>
     <a href="#"><button type="button" class="btn btn-primary">Promoções</button></a>
-
+   
 </div>
 <!-- 
    
