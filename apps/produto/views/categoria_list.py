@@ -6,7 +6,7 @@ class CategoriaListView(ListView):
     model = Categoria
     template_name = "categoria/categoria_list.html"
 
-    def supermercado(self):
+    def categoria(self):
 
         categoria = Categoria.objects.all()
 
