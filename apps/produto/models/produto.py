@@ -25,6 +25,12 @@ class Produto(models.Model):
         null=True,
         blank=True,
     )
+    promocao = models.ForeignKey(
+        "promocao.Promocao",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Produto"

@@ -14,5 +14,3 @@ class PromocaoAdmin(admin.ModelAdmin):
     ]
 
     list_filter = ["nome"]
-
-    filter_horizontal = ["produtos"]

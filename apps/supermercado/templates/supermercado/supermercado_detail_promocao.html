@@ -1,0 +1,56 @@
+
+{% extends "admin_base.html" %}
+
+{% load bootstrap5 %}
+
+
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Promoções do {{supermercado.nome}}</h3>
+    <div class=" bg-side sidebar">
+        <a href="{%url 'promocao_create'%}"><button type="button" class="btn btn-primary">Nova promoção</button></a>
+    </div>
+    <br>
+    <section>
+        <div class="row">
+            {% for c in supermercado.promocao_set.all %}
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    <div class="card-body">
+                        <h5 class="card-title">Promoção: {{c.nome}}</h5> 
+                        <a href="#" class="btn btn-outline-primary btn-sm">Ver promoção</a>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Editar</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm">Excluír</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+{%endblock%}

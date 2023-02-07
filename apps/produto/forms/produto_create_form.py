@@ -16,6 +16,7 @@ class ProdutoForm(forms.ModelForm):
             "descricao",
             "categorias",
             "supermercados",
+            "promocao",
         ]
 
     def __init__(self, *args, **kwargs):

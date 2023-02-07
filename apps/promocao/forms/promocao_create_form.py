@@ -10,7 +10,6 @@ class PromocaoForm(forms.ModelForm):
 
         fields = [
             "nome",
-            "produtos",
             "supermercados",
         ]
 

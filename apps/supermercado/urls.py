@@ -4,6 +4,7 @@ from .views.supermercado_create import SupermercadoCreateView
 from .views.supermercado_delete import SupermercadoDeleteView
 from .views.supermercado_detail import SupermercadoDetailView
 from .views.supermercado_detail_categoria import SupermercadoCategoriaView
+from .views.supermercado_detail_promocao import SupermercadoPromocaoView
 from .views.supermercado_detail_usuario import SupermercadoUsuarioDetailView
 from .views.supermercado_list import SupermercadoListView
 from .views.supermercado_update import SupermercadoUpdateView
@@ -35,5 +36,10 @@ urlpatterns = [
         "supermercado_categoria/<int:pk>/",
         SupermercadoCategoriaView.as_view(),
         name="supermercado_categoria",
+    ),
+    path(
+        "supermercado_promocao/<int:pk>/",
+        SupermercadoPromocaoView.as_view(),
+        name="supermercado_promocao",
     ),
 ]
