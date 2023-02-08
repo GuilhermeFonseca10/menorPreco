@@ -11,4 +11,5 @@ class BaseModelsTest(MenorPrecoBase):
     def test_user_creation(self):
         user = UserFactory()
         self.assertIsNotNone(user.pk)
-        self.assertTrue(user.check_password('password'))
+        self.assertTrue(user.check_nome('nome'))
+        self.assertTrue(user.check_email('email'))
