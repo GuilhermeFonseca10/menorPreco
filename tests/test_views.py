@@ -1,10 +1,15 @@
 from django.urls import reverse_lazy
+from .factories import UserFactory
 from tests.test_base import MenorPrecoBase
 
  #  ---------------------------- TESTANDO VIEWS --------------------------------------   
    
-class BaseViewsTest(MenorPrecoBase):
+class BaseViewsTest(MenorPrecoBase,UserFactory):
 
+    def test_model_user(self):
+        user = UserFactory()
+        pass
+    
 
     def test_home_view_return_status_code_200_ok(self):
         response = self.client.get(reverse_lazy("home"),follow=True)
