@@ -1,6 +1,7 @@
 from django.urls import path
 from promocao.views.promocao_create import PromocaoCreateView
 from promocao.views.promocao_detail import PromocaoDetailView
+from promocao.views.promocao_detail_admin import PromocaoAdminDetailView
 from promocao.views.promocao_list import PromocaoListView
 
 urlpatterns = [
@@ -10,5 +11,10 @@ urlpatterns = [
         "detail/<int:pk>/",
         PromocaoDetailView.as_view(),
         name="promocao_detail",
+    ),
+    path(
+        "promocao_detail_admin/<int:pk>/",
+        PromocaoAdminDetailView.as_view(),
+        name="promocao_detail_admin",
     ),
 ]

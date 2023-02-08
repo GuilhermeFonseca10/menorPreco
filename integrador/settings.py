@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "bootstrap5",
     "rolepermissions",
+    "django_filters",
     # Apps
     "usuario",
     "core",
