@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from supermercado.models.supermercado import Supermercado
-
+from rolepermissions.mixins import HasRoleMixin
 from utils.decorators import LoginRequiredMixin
 
 
-class SupermercadoCategoriaView(LoginRequiredMixin, DetailView):
+class SupermercadoCategoriaView(HasRoleMixin, LoginRequiredMixin, DetailView):
     model = Supermercado
+    allowed_roles = "administrador"
     template_name = "supermercado/supermercado_detail_categoria.html"
 
     def supermercado_detail_view(request, id):

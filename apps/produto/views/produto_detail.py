@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from produto.models.produto import Produto
-
-
-class ProdutoDetailView(DetailView):
+from utils.decorators import LoginRequiredMixin
+from rolepermissions.mixins import HasRoleMixin
+class ProdutoDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
     model = Produto
+    allowed_roles = ["usuario_comum", "administrador"]
     template_name = "produto/produto_detail.html"
 
     def supermercado_detail_view(request, id):
