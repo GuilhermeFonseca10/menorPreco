@@ -1,5 +1,4 @@
 import factory
-from factory import Faker, SubFactory
 
 from apps.usuario.models.usuario import Usuario
 
