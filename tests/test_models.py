@@ -1,8 +1,7 @@
 from django.urls import reverse_lazy
 
+from tests.factories import UserFactory
 from tests.test_base import MenorPrecoBase
-
-from .factories import UserFactory
 
 #  ---------------------------- TESTANDO VIEWS --------------------------------------
 
