@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Promocao(models.Model):
@@ -18,3 +19,11 @@ class Promocao(models.Model):
 
     def __str__(self):
         return self.nome
+
+    @property
+    def get_absolute_url(self):
+        return reverse("promocao_update", args=[str(self.id)])
+
+    @property
+    def get_delete_url(self):
+        return reverse("promocao_delete", args=[str(self.id)])

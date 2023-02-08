@@ -62,19 +62,42 @@
 <br>
 
 <div class="container">
+  <form action="" method="get">
   <div class="row height d-flex justify-content-center align-items-center">
     <div class="col-md-4">
       <div class="search">
         <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Pesquise o Melhor Preço...">
-        <button class="btn btn-primary">Procurar</button>
+        
+        {{form_filter}}
+        <button class="btn btn-primary" type="submit">Procurar</button>
+      
       </div>
     </div>
   </div>
 </div>
+</form>
+<!--
+<form action="" method="get">
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="form-group col-4">
+              {{form_filter}}
+            </div>
+            <input class="btn btn-primary" type="submit" value="Buscar" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+</form>
 <br>
-
+-->
 <div class="container">
   <div class="row">
     {%for produto in object_list %}
@@ -95,7 +118,6 @@
     {%endfor%}
     </div>
 </div>
-
 
 
 <!-- Cards Categorias -->
