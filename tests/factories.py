@@ -1,12 +1,14 @@
-from factory.django import DjangoModelFactory
-from faker import Faker
-from apps.usuario.models import Usuario
+import factory
+from factory import Faker, SubFactory
 
-class UserFactory(DjangoModelFactory):
-    username = Faker("user_name") 
-    email = Faker("email")
-    cpf = Faker("cpf")
-    password = Faker("password")
-    
+from apps.usuario.models.usuario import Usuario
+
+
+class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Usuario
+        app_label = "usuario"
+
+    username = factory.Faker("username")
+    email = factory.Faker("email")
+    password = factory.Faker("password")
