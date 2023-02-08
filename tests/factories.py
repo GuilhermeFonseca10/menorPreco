@@ -1,11 +1,23 @@
-from factory.django import DjangoModelFactory
-from faker import Factory, Faker
-from apps.usuario.models import Usuario
+import factory
+from django.contrib.auth.models import User
 
-class UserFactory(Factory.django.DjangoModelFactory):
-    username = Faker("nome") 
-    email = Faker("email")
-    
+
+class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = Usuario
-        
+        model = User
+
+    username = factory.Faker("user_name")
+    email = factory.Faker("email")
+
+
+# from apps.usuario.models.usuario import Usuario
+# from factory.django import DjangoModelFactory
+# from faker import Faker
+
+
+# class UserFactory(DjangoModelFactory):
+#     username = Faker("nome")
+#     email = Faker("email")
+
+#     class Meta:
+#         model = Usuario

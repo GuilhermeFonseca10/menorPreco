@@ -1,9 +1,5 @@
-from django.urls import reverse_lazy
-
 from tests.factories import UserFactory
 from tests.test_base import MenorPrecoBase
-
-#  ---------------------------- TESTANDO VIEWS --------------------------------------
 
 
 class BaseModelsTest(MenorPrecoBase):
@@ -14,5 +10,5 @@ class BaseModelsTest(MenorPrecoBase):
         user = UserFactory()
         self.assertIsNotNone(user.pk)
 
-        self.assertTrue(user.check_nome('nome'))
-        self.assertTrue(user.check_email('email'))
+        self.assertTrue(user.check_name("name"))
+        self.assertTrue(user.check_email("email"))
