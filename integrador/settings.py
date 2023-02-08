@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rolepermissions",
     "bootstrap5",
     "django_filters",
+    "rolepermissions",
     # Apps
     "usuario",
     "core",

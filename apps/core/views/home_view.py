@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from produto.models.produto import Produto
 
+from utils.decorators import LoginRequiredMixin
+
 
 class HomeView(ListView):
 
