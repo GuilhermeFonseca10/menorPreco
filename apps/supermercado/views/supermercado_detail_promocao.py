@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
-from supermercado.models.supermercado import Supermercado
 from rolepermissions.mixins import HasRoleMixin
+from supermercado.models.supermercado import Supermercado
+
 from utils.decorators import LoginRequiredMixin
 
 

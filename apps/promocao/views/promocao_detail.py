@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from promocao.models.promocao import Promocao
-from utils.decorators import LoginRequiredMixin
 from rolepermissions.mixins import HasRoleMixin
+
+from utils.decorators import LoginRequiredMixin
+
 
 class PromocaoDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
     model = Promocao

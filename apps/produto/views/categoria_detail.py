@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from produto.models.categoria import Categoria
-from utils.decorators import LoginRequiredMixin
 from rolepermissions.mixins import HasRoleMixin
+
+from utils.decorators import LoginRequiredMixin
+
+
 class CategoriaDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
     model = Categoria
     allowed_roles = ["usuario_comum", "administrador"]

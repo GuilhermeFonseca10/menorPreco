@@ -1,7 +1,9 @@
 from django.views.generic import ListView
 from promocao.models.promocao import Promocao
-from utils.decorators import LoginRequiredMixin
 from rolepermissions.mixins import HasRoleMixin
+
+from utils.decorators import LoginRequiredMixin
+
 
 class PromocaoListView(HasRoleMixin, LoginRequiredMixin, ListView):
     model = Promocao

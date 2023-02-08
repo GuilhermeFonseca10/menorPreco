@@ -1,6 +1,7 @@
 from django.views.generic import DeleteView
 from produto.models.categoria import Categoria
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

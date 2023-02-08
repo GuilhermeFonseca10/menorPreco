@@ -1,6 +1,7 @@
 from django.views.generic import DeleteView
 from promocao.models.promocao import Promocao
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

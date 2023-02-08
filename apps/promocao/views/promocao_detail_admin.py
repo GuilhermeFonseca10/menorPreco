@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from promocao.models.promocao import Promocao
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

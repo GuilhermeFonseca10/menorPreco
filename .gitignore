@@ -1,6 +1,5 @@
 __pycache__
 db.sqlite3
 .env_integrador
-.vscode/*
+
 venv
-!.vscode/settings.json

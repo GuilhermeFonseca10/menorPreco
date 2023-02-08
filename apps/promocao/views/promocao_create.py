@@ -2,6 +2,7 @@ from django.views.generic import CreateView
 from promocao.forms.promocao_create_form import PromocaoForm
 from promocao.models.promocao import Promocao
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

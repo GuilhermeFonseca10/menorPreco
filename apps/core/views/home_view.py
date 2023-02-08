@@ -1,9 +1,8 @@
 from core.filters import FilterBook
-from django.core.paginator import Paginator
-from django.shortcuts import render
 from django.views.generic import ListView
 from produto.models.produto import Produto
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic import UpdateView
 from produto.models.categoria import Categoria
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 

@@ -1,6 +1,7 @@
 from django.views.generic import CreateView
 from produto.forms.produto_create_form import ProdutoForm
 from rolepermissions.mixins import HasRoleMixin
+
 from utils.decorators import LoginRequiredMixin
 
 from ..models.produto import Produto

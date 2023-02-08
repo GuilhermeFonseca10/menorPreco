@@ -1,7 +1,10 @@
 from django.views.generic import ListView
 from produto.models.categoria import Categoria
-from utils.decorators import LoginRequiredMixin
 from rolepermissions.mixins import HasRoleMixin
+
+from utils.decorators import LoginRequiredMixin
+
+
 class CategoriaListView(HasRoleMixin, LoginRequiredMixin, ListView):
     model = Categoria
     allow_empty = ["usuario_comum", "administrador"]
