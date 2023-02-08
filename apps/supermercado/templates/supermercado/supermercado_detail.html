@@ -16,13 +16,15 @@
     <h3>Você está no: <b>{{supermercado.nome}}</b></h3>
 
     <a href="{%url 'produto_create'%}"><button type="button" class="btn btn-primary">Adicionar produto</button></a>
-
+    <a href="{%url 'supermercado_categoria' supermercado.id%}"><button type="button" class="btn btn-primary">Categorias</button></a>
+    <a href="{%url 'supermercado_promocao' supermercado.id%}"><button type="button" class="btn btn-primary">Promoções</button></a>
+   
 </div>
-<!-- <div class="container geral">
-    <h3 class="text-primary mb-5 mt-5">Supermercado {{supermercado.nome}}</h3>
+<!-- 
+   
+
     
-    <a href="{%url 'produto_create'%}"><button type="button" class="btn btn-primary">Adicionar produto</button></a>
-    
+
     <section>
         <div class="row">
             <div class="col-lg-3 mb-3 gallery">
@@ -50,7 +52,7 @@
 <table>
     <thead>
       <tr>
-        <th scope="col"></th>
+        <th scope="col">Imagem</th>
         <th scope="col">Produto</th>
         <th scope="col">Valor</th>
         <th scope="col">Descrição</th>
@@ -66,10 +68,11 @@
             {%endif%}
         </td>
         <td data-label="Produto">{{produto.nome}}</td>
-        <td data-label="Valor">{{produto.valor}}</td>
+        <td data-label="Valor">{{produto.valor}} R$</td>
         <td data-label="Descrição">{{produto.descricao}}</td>
         <td data-label="Ação">
-            <a href="{%url 'produto_update' produto.id%}" class="btn btn-outline-primary btn-sm">Edita</a>
+            <a href="{%url 'produto_update' produto.id%}" class="btn btn-outline-primary btn-sm">Editar</a>
+            <a href="{%url 'produto_delete' produto.id%}" class="btn btn-outline-danger btn-sm">Excluír</a>
         </td>
       </tr>
     </tbody>

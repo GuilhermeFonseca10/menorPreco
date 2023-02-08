@@ -1,26 +1,20 @@
 from crum import get_current_user
 from django import forms
-from produto.models.produto import Produto
+from promocao.models.promocao import Promocao
 from supermercado.models.supermercado import Supermercado
 
 
-class ProdutoForm(forms.ModelForm):
+class PromocaoForm(forms.ModelForm):
     class Meta:
-        model = Produto
+        model = Promocao
 
         fields = [
             "nome",
-            "valor",
-            "estoque",
-            "imagem",
-            "descricao",
-            "categorias",
             "supermercados",
-            "promocao",
         ]
 
     def __init__(self, *args, **kwargs):
-        super(ProdutoForm, self).__init__(*args, **kwargs)
+        super(PromocaoForm, self).__init__(*args, **kwargs)
         user = get_current_user()
         self.initial["usuario"] = user.id
         supermercado = Supermercado.objects.filter(usuario=user)

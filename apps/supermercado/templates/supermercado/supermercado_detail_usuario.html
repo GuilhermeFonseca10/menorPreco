@@ -12,15 +12,37 @@
 
 
 {% block 'body' %}
+
 <div class="container geral">
-    <h3 class="text-primary mb-5 mt-5">Supermercado {{supermercado}}</h3>
+    <h3 class="text-primary mb-5 mt-5">Supermercado {{supermercado.nome}}</h3>
+   
+    <section>
+      
+                    {%if supermercado.imagem%}
+                        <img src="{{supermercado.imagem.url}}" class="card-img-top" alt="...">
+                    {%endif%}
+                   
+                        <h5 class="card-title">Supermercado:{{supermercado.nome}}</h5>
+                        <p class="card-text">Localização:{{supermercado.cidade}}, {{supermercado.bairro}}, {{supermercado.rua}}, {{supermercado.numero}}</p>
+                    
+                        
+                        
+                        <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                  
+       
+    </section>
+</div>
+<br>
+<div class="container geral">
+    
    <p>Confira nossas ofertas</p>
     <section>
         <div class="row">
+            {% for produto in supermercado.produto_set.all %}
             <div class="col-lg-3 mb-3 gallery">
-                
+               
                 <div class="card card-header">
-                    {% for produto in supermercado.produto_set.all %}
+                    
                     {%if produto.imagem%}
                         <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
                     {%endif%}
@@ -28,17 +50,19 @@
                         <h5 class="card-title">Produto: {{produto.nome}}</h5>
                         <p class="card-text">Valor: {{produto.valor}} R$</p>
                         <p class="card-text">Descrição: {{produto.descricao}}</p>
-                        {%endfor%}
+                       
                         
                         
                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
                     </div>
+                    
                 </div>
+                
             </div>
-            
+            {%endfor%}
         </div>
     </section>
 </div>
 
-
+b
 {% endblock%}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "bootstrap5",
+    "rolepermissions",
     # Apps
     "usuario",
     "core",
@@ -151,3 +152,4 @@ LOGOUT_REDIRECT_URL = "home"
 AUTHENTICATION_BACKENDS = [
     "authentication.LoginUsernameEmail",
 ]
+ROLEPERMISSIONS_MODULE = "integrador.roles"

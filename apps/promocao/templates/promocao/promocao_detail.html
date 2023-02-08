@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'core/core.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+<h3 class="text-primary mb-5 mt-5">Detalhes {{promocao.nome}}</h3>
+<section>
+    <div class="row">
+      
+        <div class="col-lg-3 mb-3 gallery">
+            
+            <div class="card card-header">
+                <div class="card-body">
+                    <h5 class="card-title">Promoção: {{promocao.nome}}</h5>
+                    
+                   
+                   
+                    <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+  </section>
+  </div>
+<br>
+  <div class="container geral">
+    
+    <p>Produtos</p>
+     <section>
+       
+         <div class="row">
+            {{pro}}
+             {% for produto in promocao.supermercados.produto_set.all %}
+             <div class="col-lg-3 mb-3 gallery">
+                
+                 <div class="card card-header">
+                     
+                     {%if produto.imagem%}
+                         <img src="{{produto.imagem.url}}" class="card-img-top" alt="...">
+                     {%endif%}
+                     <div class="card-body">
+                        <p class="card-text">Valor: {{produto.nome}} R$</p>
+                        <p class="card-text">Valor: {{produto.valor}} R$</p>
+                        <p class="card-text">Supermercado: {{produto.supermercados}}</p>
+                        <p class="card-text">Localização: {{produto.supermercados.cidade}}, {{produto.supermercados.bairro}}, 
+                            {{produto.supermercados.rua}}, {{produto.supermercados.numero}}</p>
+                        <p class="card-text">Descrição: {{produto.descricao}}</p>
+                        
+                         
+                         
+                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                     </div>
+                     
+                 </div>
+                 
+             </div>
+             {%endfor%}
+         </div>
+     </section>
+ </div>
+  {%endblock%}

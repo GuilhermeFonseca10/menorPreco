@@ -7,6 +7,7 @@ from ..models.categoria import Categoria
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = [
         "nome",
+        "supermercados",
     ]
 
     search_fields = [

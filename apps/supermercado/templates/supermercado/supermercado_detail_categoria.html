@@ -1,0 +1,56 @@
+
+{% extends "admin_base.html" %}
+
+{% load bootstrap5 %}
+
+
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Categorias do {{supermercado.nome}}</h3>
+    <div class=" bg-side sidebar">
+        <a href="{%url 'categoria_create'%}"><button type="button" class="btn btn-primary">Nova categoria</button></a>
+    </div>
+    <br>
+    <section>
+        <div class="row">
+            {% for c in supermercado.categoria_set.all %}
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    <div class="card-body">
+                        <h5 class="card-title">Categoria: {{c.nome}}</h5> 
+                        <a href="{%url 'categoria_detail_admin' c.id%}" class="btn btn-outline-primary btn-sm">Ver categoria</a>
+                        <a href="{%url 'categoria_update' c.id%}" class="btn btn-outline-primary btn-sm">Editar</a>
+                        <a href="{%url 'categoria_delete' c.id%}" class="btn btn-outline-danger btn-sm">Excluír</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+{%endblock%}

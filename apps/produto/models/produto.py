@@ -25,6 +25,12 @@ class Produto(models.Model):
         null=True,
         blank=True,
     )
+    promocao = models.ForeignKey(
+        "promocao.Promocao",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Produto"
@@ -37,3 +43,7 @@ class Produto(models.Model):
     @property
     def get_absolute_url(self):
         return reverse("produto_update", args=[str(self.id)])
+
+    @property
+    def get_delete_url(self):
+        return reverse("produto_delete", args=[str(self.id)])

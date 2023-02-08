@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load bootstrap5 %}
+
+
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'supermercado/supermercado.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+
+<div class="container geral">
+    <h3 class="text-primary mb-5 mt-5">Categorias</h3>
+
+    <section>
+        <div class="row">
+            {%for categoria in object_list %}
+            <div class="col-lg-3 mb-3 gallery">
+                
+                <div class="card card-header">
+                    <div class="card-body">
+                        <h5 class="card-title">Categoria: {{categoria.nome}}</h5> 
+                        <a href="{%url 'categoria_detail' categoria.id%}" class="btn btn-outline-primary btn-sm">Confira!</a>
+                       
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+{%endblock%}
