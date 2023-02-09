@@ -4,14 +4,6 @@ from ..models.usuario import Usuario
 
 
 class UsuarioCreationForm(UserCreationForm):
-    
     class Meta:
         model = Usuario
         fields = ["username", "email"]
-       
-
-        
-        
-        
-      
-        

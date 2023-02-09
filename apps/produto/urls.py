@@ -1,6 +1,5 @@
 from django.urls import path
-
-# categoria
+from produto import viewsets
 from produto.views.categoria_create import CategoriaCreateView
 from produto.views.categoria_delete import CategoriaDeleteView
 from produto.views.categoria_detail import CategoriaDetailView
@@ -11,6 +10,14 @@ from produto.views.produto_create_ import ProdutoCreateView
 from produto.views.produto_delete import ProdutoDeleteView
 from produto.views.produto_detail import ProdutoDetailView
 from produto.views.produto_update import ProdutoUpdateView
+from rest_framework import routers
+
+produto_router = routers.DefaultRouter()
+produto_router.register(
+    "api_produtos",
+    viewsets.ProdutoViewSet,
+    basename="produtos_api",
+)
 
 urlpatterns = [
     path("cad", ProdutoCreateView.as_view(), name="produto_create"),
@@ -60,4 +67,4 @@ urlpatterns = [
         CategoriaDeleteView.as_view(),
         name="categoria_delete",
     ),
-]
+] + produto_router.urls
