@@ -32,5 +32,5 @@ class BaseUrlsTest(MenorPrecoBase):
         self.assertEqual(url, "/supermercado/cad")
 
     # def test_produto_urls(self):
-    #    url = reverse('produto_list')
-    #    self.assertEqual(url, '/produto/list')
+    #     url = reverse("detail/<int:pk>/")
+    #     self.assertEqual(url, "produto_detail")

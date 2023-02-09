@@ -1,9 +1,10 @@
 from django.urls import reverse_lazy
-from tests.factories import UserFactory
+
+# from tests.factories import UserFactory
 from tests.test_base import MenorPrecoBase
 
 
-class BaseViewsTest(MenorPrecoBase, UserFactory):
+class BaseViewsTest(MenorPrecoBase):
     # def test_model_user(self):
     #     user = UserFactory()
     #     pass
@@ -17,7 +18,9 @@ class BaseViewsTest(MenorPrecoBase, UserFactory):
         assert response.status_code == 200
 
     # def test_produto_view_return_status_code_200_ok(self):
-    #     response = self.client.get(reverse_lazy("produto_list"),follow=True)
+    #     response = self.client.get(
+    #         reverse_lazy("produto:produto_detail"), follow=True
+    #     )
     #     assert response.status_code == 200
 
     def test_supermercado_create_view_return_status_code_200_ok(self):
@@ -46,7 +49,6 @@ class BaseViewsTest(MenorPrecoBase, UserFactory):
 
     # def test_usuario_list_view_return_status_code_200_ok(self):
     #     response = self.client.post(
-    #         reverse_lazy("usuario/list/usuario_list"),
-    #         follow=True,
+    #         reverse_lazy("usuario/list/usuario_list"),follow=True,
     #     )
     #     assert response.status_code == 200
