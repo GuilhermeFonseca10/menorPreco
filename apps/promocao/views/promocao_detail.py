@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import DetailView
 from promocao.models.promocao import Promocao
-from rolepermissions.mixins import HasRoleMixin
 
 from utils.decorators import LoginRequiredMixin
 
 
-class PromocaoDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
+class PromocaoDetailView(LoginRequiredMixin, DetailView):
     model = Promocao
-    allowed_roles = ["usuario_comum", "administrador"]
+
     template_name = "promocao/promocao_detail.html"
 
     def promocao_detail_view(request, id):
