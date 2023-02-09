@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from produto.models.produto import Produto
 
+from utils.decorators import LoginRequiredMixin
 
-class ProdutoDetailView(DetailView):
+
+class ProdutoDetailView(LoginRequiredMixin, DetailView):
     model = Produto
+
     template_name = "produto/produto_detail.html"
 
     def supermercado_detail_view(request, id):

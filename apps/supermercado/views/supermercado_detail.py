@@ -7,6 +7,7 @@ from utils.decorators import LoginRequiredMixin
 
 class SupermercadoDetailView(LoginRequiredMixin, DetailView):
     model = Supermercado
+
     template_name = "supermercado/supermercado_detail.html"
 
     def supermercado_detail_view(request, id):

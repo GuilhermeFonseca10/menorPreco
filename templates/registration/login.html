@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{%load socialaccount%}
 {% load bootstrap5 %}
 
 
@@ -17,9 +17,9 @@
   <div class="" style="margin-top:60px">
       <div class="rounded d-flex justify-content-center">
           <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
-            {% bootstrap_alert "Cadastre-se ou faça login para divulgar seu supermercado conosco." alert_type='danger' %}
+            {% bootstrap_alert "Cadastre-se ou acesse o sistema para visualizar as melhores ofertas ou divulgar seu supermercado conosco." alert_type='danger' %}
               <div class="text-center">
-                  <h3 class="text-primary mb-5 mt-3">Logar na Plataforma</h3>
+                  <h3 class="text-primary mb-5 mt-3">Entrar na Plataforma</h3>
               </div>
               <form method="POST">
                 {%csrf_token%}
@@ -29,6 +29,8 @@
                 </div>
                 {% buttons submit='Login' %} {% endbuttons %}
               </form>
+              <a href="{%  provider_login_url 'google' %}">Login with Google</a>
+
               <!-- <form method="POST" class="form-log">
                 {%csrf_token%}
                   <div class="p-4">
@@ -55,5 +57,7 @@
       </div>
   </div>
 </div>
+
+
 
 {% endblock%}

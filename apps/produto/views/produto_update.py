@@ -1,12 +1,14 @@
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView
 from produto.models.produto import Produto
+from rolepermissions.mixins import HasRoleMixin
 
 from utils.decorators import LoginRequiredMixin
 
 
-class ProdutoUpdateView(LoginRequiredMixin, UpdateView):
+class ProdutoUpdateView(HasRoleMixin, LoginRequiredMixin, UpdateView):
     model = Produto
+    allowed_roles = "administrador"
     fields = [
         "nome",
         "imagem",

@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from promocao.models.promocao import Promocao
 
+from utils.decorators import LoginRequiredMixin
 
-class PromocaoDetailView(DetailView):
+
+class PromocaoDetailView(LoginRequiredMixin, DetailView):
     model = Promocao
+
     template_name = "promocao/promocao_detail.html"
 
     def promocao_detail_view(request, id):

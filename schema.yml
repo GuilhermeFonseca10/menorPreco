@@ -1,0 +1,224 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /produto/api_produtos/:
+    get:
+      operationId: produto_api_produtos_list
+      tags:
+      - produto
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Produto'
+          description: ''
+    post:
+      operationId: produto_api_produtos_create
+      tags:
+      - produto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Produto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Produto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Produto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+          description: ''
+  /produto/api_produtos/{id}/:
+    get:
+      operationId: produto_api_produtos_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Produto.
+        required: true
+      tags:
+      - produto
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+          description: ''
+    put:
+      operationId: produto_api_produtos_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Produto.
+        required: true
+      tags:
+      - produto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Produto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Produto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Produto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+          description: ''
+    patch:
+      operationId: produto_api_produtos_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Produto.
+        required: true
+      tags:
+      - produto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProduto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProduto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProduto'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+          description: ''
+    delete:
+      operationId: produto_api_produtos_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Produto.
+        required: true
+      tags:
+      - produto
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    PatchedProduto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          title: Produto
+          maxLength: 100
+        valor:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        estoque:
+          type: integer
+        imagem:
+          type: string
+          format: uri
+        descricao:
+          type: string
+          title: Descrição
+        supermercados:
+          type: integer
+          nullable: true
+    Produto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nome:
+          type: string
+          title: Produto
+          maxLength: 100
+        valor:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        estoque:
+          type: integer
+        imagem:
+          type: string
+          format: uri
+        descricao:
+          type: string
+          title: Descrição
+        supermercados:
+          type: integer
+          nullable: true
+      required:
+      - estoque
+      - id
+      - imagem
+      - nome
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

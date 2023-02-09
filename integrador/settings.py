@@ -40,10 +40,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
     "bootstrap5",
     "django_filters",
     "rolepermissions",
+    "django.contrib.sites",
+    "drf_spectacular",
+    "drf_spectacular_sidecar",
+    # social
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "rest_framework",
     # Apps
     "usuario",
     "core",
@@ -84,7 +92,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "integrador.wsgi.application"
 
-
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+SITE_ID = 2
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -148,10 +160,24 @@ AUTH_USER_MODEL = "usuario.Usuario"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-LOGIN_REDIRECT_URL = "dashboard"
+LOGIN_REDIRECT_URL = "home"
 LOGIN_URL = "login"
 LOGOUT_REDIRECT_URL = "home"
-AUTHENTICATION_BACKENDS = [
-    "authentication.LoginUsernameEmail",
-]
+
 ROLEPERMISSIONS_MODULE = "integrador.roles"
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Your Project API",
+    "DESCRIPTION": "Your project description",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "SWAGGER_UI_DIST": "SIDECAR",  # shorthand to use the sidecar instead
+    "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
+    "REDOC_DIST": "SIDECAR",
+    # OTHER SETTINGS
+}
