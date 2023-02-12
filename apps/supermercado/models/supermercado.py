@@ -3,11 +3,6 @@ from django.urls import reverse
 
 
 class Supermercado(models.Model):
-    """
-    A classe Supermercado serve para armazernar os(as) supermercados do sistema.
-    Além de fazer as implementações relacionadas a um único objeto do tipo Supermercado.
-    """
-
     nome = models.CharField(verbose_name="Nome", max_length=100)
     imagem = models.ImageField(
         null=True,

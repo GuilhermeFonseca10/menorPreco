@@ -15,6 +15,8 @@ class BaseUrlsTest(MenorPrecoBase):
         url = reverse("login")
         self.assertEqual(url, "/login/")
 
+    # ------------------ TESTANDO APP USUARIO URLS ----------------------
+
     def test_register_urls(self):
         url = reverse("usuario:register")
         self.assertEqual(url, "/usuario/register/")
@@ -22,6 +24,8 @@ class BaseUrlsTest(MenorPrecoBase):
     def test_usuario_list_urls(self):
         url = reverse("usuario:usuario_list")
         self.assertEqual(url, "/usuario/list/")
+
+        # ------------------ TESTANDO APP SUPERMERCADO URLS -----------------
 
     def test_supermercado_list_urls(self):
         url = reverse("supermercado_list")
@@ -31,6 +35,10 @@ class BaseUrlsTest(MenorPrecoBase):
         url = reverse("supermercado_create")
         self.assertEqual(url, "/supermercado/cad")
 
-    # def test_produto_urls(self):
-    #     url = reverse("detail/<int:pk>/")
-    #     self.assertEqual(url, "produto_detail")
+    def test_supermercado_detail_url(self):
+        url = reverse("supermercado_detail", args=[1])
+        self.assertEqual(url, "/supermercado/detail/1/")
+
+    def test_supermercado_update_url(self):
+        url = reverse("supermercado_update", args=[1])
+        self.assertEqual(url, "/supermercado/update/1/")
