@@ -40,6 +40,12 @@
   width: 100px;
   background: blue;
 }
+.btn-search {
+  display: flex;
+  max-width: 90%;
+  margin: auto;
+  margin: 30px;
+}
 
 /* card header */
 .card {

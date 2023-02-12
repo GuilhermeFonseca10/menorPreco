@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'core/core.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'body' %}
+<br>
+<br>
+<div class="title-main">
+  <div>
+    <title>Error 403 - Proibido</title>
+  </div>
+  
+    <h1>Error 403 - Proibido</h1>
+      <p>Você não tem permissão para acessar essa página.</p>
+      <a href="{%url 'home'%}">Voltar para a página principal.</a>
+</div>
+
+{% endblock%}
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Error 403 - Proibido</title>
@@ -8,4 +39,4 @@
     <p>Você não tem permissão para acessar essa página.</p>
     <a href="{%url 'home'%}">Voltar para a página principal.</a>
   </body>
-</html>
+</html> -->
