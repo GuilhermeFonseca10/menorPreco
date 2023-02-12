@@ -10,14 +10,8 @@ from produto.views.produto_create_ import ProdutoCreateView
 from produto.views.produto_delete import ProdutoDeleteView
 from produto.views.produto_detail import ProdutoDetailView
 from produto.views.produto_update import ProdutoUpdateView
-from rest_framework import routers
 
-produto_router = routers.DefaultRouter()
-produto_router.register(
-    "api_produtos",
-    viewsets.ProdutoViewSet,
-    basename="produtos_api",
-)
+from integrador.urls import main_router
 
 urlpatterns = [
     path("cad", ProdutoCreateView.as_view(), name="produto_create"),
@@ -67,4 +61,11 @@ urlpatterns = [
         CategoriaDeleteView.as_view(),
         name="categoria_delete",
     ),
-] + produto_router.urls
+]
+
+# api
+main_router.register(
+    "api_produtos",
+    viewsets.ProdutoViewSet,
+    basename="produtos_api",
+),
