@@ -2,8 +2,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
-                                   SpectacularSwaggerView)
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 from rest_framework import routers
 from rest_framework.authtoken import views
 
@@ -22,7 +25,6 @@ urlpatterns = [
     # api
     # YOUR PATTERNS
     path("api/-token-auth/", views.obtain_auth_token),
-   
     path("api/", include(main_router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
