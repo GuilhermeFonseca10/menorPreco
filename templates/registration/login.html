@@ -30,13 +30,15 @@
                 {% buttons submit='Logar' %} {% endbuttons %}
               </form>
               
-              <form action="{% provider_login_url 'google' %}" method="post">
-                {% csrf_token %}
-                <button class="btn google-login" type="submit">
-                  <img src="../../media/icon.png" alt="Google icon" style="width: 30px; height: 30px; ">
-                  Logar com Google
-              </button>
-              </form>
+              <div class="log-social">
+                <form action="{% provider_login_url 'google' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn google-login" type="submit">
+                      <img src="../../media/icon.png" alt="Google icon" style="width: 30px; height: 30px; ">
+                      Logar com Google
+                  </button>
+                </form>
+              </div>
           </div>
       </div>
   </div>
