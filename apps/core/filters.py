@@ -1,5 +1,5 @@
 from django import forms
-from django_filters import CharFilter, ChoiceFilter, FilterSet
+from django_filters import CharFilter, FilterSet
 from produto.models.produto import Produto
 
 
