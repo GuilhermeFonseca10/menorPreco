@@ -9,8 +9,9 @@
 
 
 {% block 'body' %}
-<h3 class="text-primary mb-5 mt-5">Detalhes do {{produto.nome}}</h3>
-<section>
+
+<section class="container details">
+    <h3 class="text-primary mb-5 mt-5">Informações do Produto</h3>
     <div class="d-block p-2">
         {%if produto.imagem%}
             <img src="{{produto.imagem.url}}" class="rounded mx-auto d-block" alt="...">
@@ -27,6 +28,6 @@
       
     </div>
 </section>
-</div>
+
 
 {%endblock%}

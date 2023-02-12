@@ -1,50 +1,70 @@
-/* CARDS DA HOME */
-/* .card-product {
-    width: 250px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px;
-  }
-  
-  .card-product img {
-    padding-top: 10px;
-    width: 40%;
-    height: 110px;
-    object-fit: cover;
-  }
-  
-  .card-content-product {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .card-title-product {
-    font-size: 24px;
-    margin: 1px;
-  }
-  
-  .card-description-product {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: -5px;
-  }
-  
-  .card-content-product a{
-    margin: 10px;
-  }
-  
-  .card-price-product {
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-  } */
+.card-super {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+}
 
+.card-super img {
+  padding-top: 10px;
+  width: 140px;
+  height: 90px;
+  margin: auto;
+}
 
+.card-content-product {
+  padding: 15px;
+  text-align: center;
+}
+
+.details .card-title {
+  text-align: center;
+}
+
+.details .card-text {
+  text-align: center;
+}
+.details img {
+  padding-top: 10px;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+}
+
+.card-product {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.card-price-product {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+.card-product img {
+  padding-top: 10px;
+  width: 40%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.card-content-product {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title-product {
+  font-size: 24px;
+  margin: 1px;
+}
 
   table {
     border: 1px solid #ccc;
@@ -142,53 +162,3 @@
   
   
   
-  
-  
-
-
-
-
-/* .geral a {
-    text-decoration: none;
-}
-
-.geral h3 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-} */
-
-/* style supermercado_form */
-/* .form-style {
-    width: 100%;
-    max-width: 100%;
-}
-
-.form-style form{
-    width:  400px;
-    margin: auto;
-} */
-
-/* card */
-/* .gallery{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.card-header{
-    width: 500px;
-    height: 300px;
-    overflow: hidden;
-    text-align: center;
-}
-.card-header:hover{
-    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
-}
-.card-header img{
-    width: 220px;
-    height: 150px;
-    margin: auto;
-}
-.card-title{
-    font-size: 18px;
-} */
