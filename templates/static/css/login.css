@@ -6,8 +6,10 @@
     color: #000;
     border: 1px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
+    
+    
   }
   
   .google-login img {
