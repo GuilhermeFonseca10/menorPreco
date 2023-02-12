@@ -51,7 +51,9 @@
 
 <div class="container">
   <form class="btn-search" action="" method="get">
-          {{form_filter}}
+    {%for obj in form_filter%}
+          {{obj}}
+        {%endfor%}
           <button class="btn btn-primary" type="submit">Procurar</button>
   </form>
 </div>

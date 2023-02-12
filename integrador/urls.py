@@ -8,6 +8,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from rest_framework import routers
+from rest_framework.authtoken import views
 
 main_router = routers.DefaultRouter()
 
@@ -23,6 +24,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # api
     # YOUR PATTERNS
+    path("api/-token-auth/", views.obtain_auth_token),
+    path("api-auth/", include("rest_framework.urls")),
     path("api/", include(main_router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
