@@ -16,16 +16,14 @@
 <div class="container geral">
     <h3 class="text-primary mb-5 mt-5">Supermercados</h3>
 
-    <section>
+    <div class="container">
         <div class="row">
             {%for super in object_list %}
-            <div class="col-lg-3 mb-3 gallery">
-                
-                <div class="card card-header">
+                <div class="card card-super">
                     {%if super.imagem%}
                         <img src="{{super.imagem.url}}" class="card-img-top" alt="...">
                     {%endif%}
-                    <div class="card-body">
+                    <div class="card-content-product">
                         <h5 class="card-title">Supermercado:{{super.nome}}</h5>
                         <p class="card-text">Localização:{{super.cidade}}, {{super.bairro}}, {{super.rua}}, {{super.numero}}</p>
                     
@@ -34,10 +32,10 @@
                         <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
                     </div>
                 </div>
-            </div>
+            
             {%endfor%}
         </div>
-    </section>
+    </div>
 </div>
 
 

@@ -48,6 +48,14 @@
 }
 
 /* card header */
+.details .card-title {
+  text-align: center;
+}
+
+.details .card-text {
+  text-align: center;
+}
+
 .card {
     background-color: #fff;
     border-radius: 10px;
