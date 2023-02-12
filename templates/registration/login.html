@@ -29,10 +29,15 @@
                 </div>
                 {% buttons submit='Logar' %} {% endbuttons %}
               </form>
-              <a href="{%  provider_login_url 'google' %}" class="google-login">
-                <img src="../../media/icon.png" alt="Google icon">
-                Logar com Google
-              </a>
+
+              <form action="{% provider_login_url 'google' %}" method="post">
+                {% csrf_token %}
+                <a href="{%  provider_login_url 'google' %}" class="google-login">
+                  <img src="../../media/icon.png" alt="Google icon">
+                  Logar com Google
+                </a>
+              </form>
+
 
               <!-- <form method="POST" class="form-log">
                 {%csrf_token%}
