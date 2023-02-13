@@ -17,6 +17,7 @@ class ProdutoUpdateView(HasRoleMixin, LoginRequiredMixin, UpdateView):
         "descricao",
         "categorias",
         "supermercados",
+        "promocao",
     ]
     success_url = reverse_lazy("supermercado_detail")
 
