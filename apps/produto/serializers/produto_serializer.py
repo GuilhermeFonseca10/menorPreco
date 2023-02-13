@@ -12,5 +12,7 @@ class ProdutoSerializer(ModelSerializer):
             "estoque",
             "imagem",
             "descricao",
+            "promocao",
+            "categorias",
             "supermercados",
         ]

@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from produto import viewsets
 from produto.views.categoria_create import CategoriaCreateView
 from produto.views.categoria_delete import CategoriaDeleteView
@@ -61,6 +61,7 @@ urlpatterns = [
         CategoriaDeleteView.as_view(),
         name="categoria_delete",
     ),
+    path("api-auth/", include("rest_framework.urls")),
 ]
 
 # api

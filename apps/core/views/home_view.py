@@ -10,7 +10,7 @@ class HomeView(LoginRequiredMixin, ListView):
     model = Produto
     template_name = "core/home.html"
     filterset = FilterBook
-    paginate_by = 3
+    paginate_by = 5
 
     def get_queryset(self):
         queryset = super().get_queryset().all()

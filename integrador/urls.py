@@ -25,7 +25,6 @@ urlpatterns = [
     # api
     # YOUR PATTERNS
     path("api/-token-auth/", views.obtain_auth_token),
-    path("api-auth/", include("rest_framework.urls")),
     path("api/", include(main_router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
