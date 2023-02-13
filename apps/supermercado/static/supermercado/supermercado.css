@@ -76,7 +76,7 @@
   }
 
   .img-product img{
-    width: 30px;
+    width: 40px;
   }
   
   .title-super h3 {
@@ -155,6 +155,13 @@
       border-bottom: 0;
     }
   }
+
+  /* -------------------- */
+  .confirma .card{
+    justify-content: center;
+    align-items: center;
+    margin-top: 230px;
+ }
   
   
   

@@ -6,7 +6,7 @@
 {% load static %}
 
 {% block 'head' %}
-<link href="{% static 'core/core.css' %}" rel="stylesheet">
+<link href="{% static 'promocao/promocao.css' %}" rel="stylesheet">
 <!-- <script src="{% static 'js/admin.js' %}"></script> -->
 {% endblock %}
 
@@ -14,16 +14,22 @@
 {% block 'body' %}
            
 
-<h1><Excluir</h1>
-<form action="" method="post">
-  {% csrf_token %}
-  
+<div class="container confirma">
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Você tem certeza que deseja deletar essa promoção?</h5>
+          {% buttons submit='Confirmar' %}
+            {% bootstrap_button content='Cancelar' href="javascript:history.go(-1);" button_type='link' button_class='btn btn-default' size='md' %}
+          {% endbuttons %}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- <h1><Excluir</h1> -->
 
-  <p>Você tem certeza que deseja deletar essa promoção?</p>
- 
-  {% buttons submit='Confirmar' %}
-    {% bootstrap_button content='Cancelar' href="javascript:history.go(-1);" button_type='link' button_class='btn btn-default' size='md' %}
-  {% endbuttons %}
-</form>
 
 {% endblock%}
